@@ -1,1 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiff Implementation Guide, FAQ & Resources | SpiffRevOps</title>
+<meta name="description" content="Practical answers to the most common Spiff implementation questions — timelines, costs, complexity, CRM integration, and more. By Isma Delgado, Spiff consultant.">
+<meta name="keywords" content="Spiff implementation guide, Spiff FAQ, Spiff consultant, how long does Spiff implementation take, Spiff cost, Spiff vs other ICM tools, commission automation">
+<link rel="canonical" href="https://spiffrevops.com/resources/">
 
+<meta property="og:title" content="Spiff Implementation Guide & FAQ | SpiffRevOps">
+<meta property="og:description" content="Practical answers on Spiff timelines, costs, complexity, and what good implementations actually look like.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://spiffrevops.com/resources/">
+
+<!-- FAQPage structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a Spiff implementation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A well-scoped Spiff implementation typically takes 3–6 weeks from kickoff to production go-live. Simple implementations with one or two commission plan types and a single CRM integration can go live in 2–3 weeks. Complex implementations — multi-variable plans with accelerators and tiers, multi-currency support, clawback logic, and large rep populations — typically take 4–6 weeks when run with clear scope and daily feedback loops. The Storyblok implementation, which covered 100+ reps, 10 commission plans, 8 currencies, and a Salesforce integration, went live in 4 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a Spiff implementation cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spiff implementation costs vary depending on the complexity of your commission plans, number of reps, CRM integrations required, and whether you need to rebuild an existing instance or start fresh. Independent consultants like SpiffRevOps typically offer fixed-scope engagements or time-banked arrangements, which are more cost-effective than large consultancies. The best approach is to scope the project clearly first — a free discovery call can usually give you a ballpark within 30 minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What CRMs does Spiff integrate with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spiff (now part of Salesforce) integrates natively with Salesforce CRM, which is the most common setup for enterprise SaaS companies. It also integrates with HubSpot, and can connect to other data sources including NetSuite and custom data pipelines via API. The quality of the integration — field mapping, sync reliability, edge case handling — matters as much as the integration existing at all. Many broken Spiff instances trace back to a poorly configured CRM connection rather than the plan logic itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Spiff handle multi-currency commission plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Spiff can handle multi-currency commission calculations for international sales teams. This requires careful configuration during implementation — currency fields need to be mapped correctly from the CRM, exchange rate logic needs to be defined, and plans need to be tested against deals in each currency. When done correctly, reps in different regions see commission statements in their local currency, calculated accurately from their deal data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common reasons Spiff implementations fail or underperform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common failure modes in Spiff implementations are: (1) Poor CRM data quality — Spiff calculates what it receives; if the Salesforce data is messy or incomplete, the commissions will be wrong. (2) Plan logic built without a clear spec — commission plans designed in a spreadsheet behave differently to those built in Spiff; the logic needs to be explicitly defined before it's configured. (3) Edge cases not handled — what happens to clawbacks, partial month reps, multi-year deals? Implementations that don't account for edge cases create disputes later. (4) Lack of testing against real historical data — plans that look right in theory often surface errors when run against 12 months of actual deals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Spiff and who is it for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spiff is an incentive compensation management (ICM) platform, now part of Salesforce, designed to automate commission calculations for sales teams. It replaces manual spreadsheet-based commission tracking with real-time, automated statements that reps can view directly. Spiff is best suited to B2B SaaS and technology companies with 20+ quota-carrying reps, commission plans of moderate-to-high complexity (accelerators, tiers, multi-product, multi-currency), and a Salesforce or HubSpot CRM as their data source."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a consultant to implement Spiff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always — but the ROI on getting expert help is usually significant. Simple implementations with straightforward quota-based plans can be self-served by an experienced RevOps practitioner. However, most mid-market SaaS companies have more complexity than they initially realise: multiple plan types, edge cases, CRM data quality issues, and multi-currency requirements all add up. Common mistakes in self-served implementations — incorrect field mapping, plan logic that doesn't match the compensation policy, missing clawback handling — create rep trust issues that are expensive to fix later. An experienced consultant also dramatically shortens the timeline."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://spiffrevops.com"},
+    {"@type":"ListItem","position":2,"name":"Resources","item":"https://spiffrevops.com/resources/"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f0f4f8;--bg-alt:#e4eaf2;--bg-card:#ffffff;
+  --border:#c8d4e0;--border-strong:#a8bace;
+  --txt:#0f1e2e;--txt-2:#3a5068;--txt-3:#6b87a0;
+  --acc:#2563eb;--acc-d:#1d4ed8;--acc-l:#3b82f6;
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Sora',sans-serif}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+
+header{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid var(--border);background:rgba(240,244,248,.92);backdrop-filter:blur(8px)}
+.nav-inner{max-width:72rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-links{display:flex;align-items:center;gap:1.5rem;list-style:none}
+.nav-links a{font-size:.875rem;color:var(--txt-2)}
+.nav-links a:hover{color:var(--txt);text-decoration:none}
+.nav-cta{padding:.5rem 1rem;background:var(--acc-d);color:#fff!important;font-size:.875rem;font-weight:600;border-radius:.5rem}
+.nav-cta:hover{text-decoration:none!important;background:var(--acc-l)!important}
+
+main{padding-top:4rem}
+
+.page-hero{background:var(--bg-card);border-bottom:1px solid var(--border);padding:3.5rem 1.5rem 2.5rem}
+.page-inner{max-width:56rem;margin:0 auto}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:var(--txt-3);margin-bottom:1.25rem}
+.breadcrumb a{color:var(--txt-3)}
+.breadcrumb a:hover{color:var(--txt-2);text-decoration:none}
+.breadcrumb span{opacity:.5}
+.eyebrow{color:var(--acc);font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.page-hero h1{font-size:clamp(1.75rem,4vw,2.25rem);font-weight:800;letter-spacing:-.025em;color:var(--txt);margin-bottom:.875rem}
+.page-hero p{font-size:1rem;color:var(--txt-2);line-height:1.7;max-width:42rem}
+
+.content-area{max-width:56rem;margin:0 auto;padding:3rem 1.5rem}
+
+/* FAQ */
+.faq-section{margin-bottom:4rem}
+.faq-section > h2{font-size:1.375rem;font-weight:700;color:var(--txt);margin-bottom:1.5rem;padding-bottom:.625rem;border-bottom:2px solid var(--border)}
+
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;margin-bottom:.75rem;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;padding:1.25rem 1.5rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:'Sora',sans-serif;font-size:.9375rem;font-weight:600;color:var(--txt);line-height:1.4}
+.faq-q:hover{background:var(--bg-alt)}
+.faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(37,99,235,.1);color:var(--acc);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:transform .2s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 1.5rem 1.25rem}
+.faq-item.open .faq-a{display:block}
+.faq-a p{font-size:.9rem;color:var(--txt-2);line-height:1.75}
+.faq-a p + p{margin-top:.75rem}
+
+/* ARTICLES */
+.articles-section{margin-bottom:4rem}
+.articles-section > h2{font-size:1.375rem;font-weight:700;color:var(--txt);margin-bottom:.5rem;padding-bottom:.625rem;border-bottom:2px solid var(--border)}
+.articles-section > .section-note{font-size:.875rem;color:var(--txt-3);margin-bottom:1.5rem}
+
+.article-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.article-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.5rem;display:flex;flex-direction:column;transition:border-color .15s,box-shadow .15s}
+.article-card:hover{border-color:#93c5fd;box-shadow:0 4px 16px rgba(37,99,235,.08)}
+.article-tag{display:inline-block;padding:.25rem .625rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;border-radius:9999px;background:rgba(37,99,235,.08);color:var(--acc-d);margin-bottom:.875rem}
+.article-card h3{font-size:1rem;font-weight:700;color:var(--txt);line-height:1.4;margin-bottom:.625rem}
+.article-card p{font-size:.875rem;color:var(--txt-2);line-height:1.65;flex:1;margin-bottom:1rem}
+.article-meta{font-size:.75rem;color:var(--txt-3);display:flex;align-items:center;gap:.5rem}
+.coming-soon-badge{display:inline-block;padding:.2rem .5rem;font-size:.6875rem;border-radius:.25rem;background:var(--bg-alt);color:var(--txt-3);font-weight:500;border:1px solid var(--border)}
+
+/* AUTHOR */
+.author-box{background:var(--bg-card);border:1px solid var(--border);border-radius:1rem;padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;margin-bottom:3rem}
+.author-av{width:3.5rem;height:3.5rem;border-radius:9999px;background:rgba(37,99,235,.12);border:2px solid rgba(37,99,235,.2);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;color:var(--acc);font-size:1rem;flex-shrink:0}
+.author-name{font-family:'Sora',sans-serif;font-weight:700;font-size:.9375rem;color:var(--txt);margin-bottom:.25rem}
+.author-title{font-size:.8125rem;color:var(--txt-3);margin-bottom:.5rem}
+.author-bio{font-size:.875rem;color:var(--txt-2);line-height:1.65}
+.author-bio a{color:var(--acc)}
+
+/* CTA */
+.res-cta{background:var(--acc-d);border-radius:1rem;padding:2.5rem;text-align:center;margin-top:2rem}
+.res-cta h2{color:#fff;font-size:1.375rem;margin-bottom:.625rem}
+.res-cta p{color:rgba(255,255,255,.75);font-size:.9rem;margin-bottom:1.25rem}
+.res-cta a{display:inline-block;padding:.75rem 1.75rem;background:#fff;color:var(--acc-d);font-weight:700;border-radius:.75rem;font-size:.9rem}
+.res-cta a:hover{text-decoration:none;background:rgba(255,255,255,.9)}
+
+footer{border-top:1px solid var(--border);background:var(--bg);padding:2rem 1.5rem;text-align:center}
+footer p{font-size:.8125rem;color:var(--txt-3)}
+footer a{color:var(--txt-3)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="/" style="display:inline-flex;align-items:center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="148" height="32">
+        <rect x="0" y="2" width="44" height="44" rx="9" fill="#2563eb"/>
+        <path d="M14 38 L22 21 L16 21 L24 7" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="54" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#0f1e2e">Spiff</text>
+        <text x="108" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#2563eb">RevOps</text>
+      </svg>
+    </a>
+    <nav><ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/resources/" style="color:var(--txt);font-weight:600">Resources</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Call</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="page-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><span>Resources</span>
+      </nav>
+      <p class="eyebrow">Spiff Implementation Resources</p>
+      <h1>Practical Guides, FAQs & Insights on Getting Spiff Right</h1>
+      <p>Answers to the questions RevOps and Finance teams ask most often — from implementation timelines and costs to handling complex plan structures. Written by Isma Delgado, independent Spiff implementation consultant.</p>
+    </div>
+  </div>
+
+  <div class="content-area">
+
+    <!-- AUTHOR BIO -->
+    <div class="author-box">
+      <div class="author-av">ID</div>
+      <div>
+        <div class="author-name">Isma Delgado</div>
+        <div class="author-title">Spiff Implementation Consultant · SpiffRevOps</div>
+        <p class="author-bio">RevOps professional with hands-on Spiff experience built in the trenches — including leading the end-to-end implementation for <a href="/case-study/storyblok.html">Storyblok.com</a>. Working closely with the Spiff team. Connect on <a href="https://www.linkedin.com/in/ismadelgado/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions About Spiff Implementation</h2>
+
+      <div class="faq-item" id="faq-timeline">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          How long does a Spiff implementation take?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>A well-scoped Spiff implementation typically takes <strong>3–6 weeks</strong> from kickoff to production go-live.</p>
+          <p>Simple implementations — one or two commission plan types, a single CRM integration, a small rep population — can go live in 2–3 weeks. Complex implementations with multi-variable plans, accelerator tiers, clawback logic, multi-currency support, and 50+ reps typically take 4–6 weeks when run with clear scope and weekly feedback loops.</p>
+          <p>The Storyblok implementation — 100+ reps, 10 commission plans across 8 currencies, clawbacks and accelerators, connected to Salesforce — went live in 4 weeks. That's not unusual when the scope is tight and the decision-making is fast. What slows projects down is usually unclear comp policy, slow internal approvals, or messy CRM data that needs cleaning before Spiff can touch it.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-cost">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          How much does a Spiff implementation cost?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Spiff implementation costs vary depending on plan complexity, number of reps, CRM integrations required, and whether you're starting fresh or rebuilding an existing instance.</p>
+          <p>Independent consultants like SpiffRevOps offer fixed-scope engagements or time-banked arrangements — typically significantly more cost-effective than large consultancies, with the added benefit of working directly with a senior practitioner rather than a junior team. The best way to get an accurate number is a scoping call — most projects can be ballparked within 30 minutes of understanding the comp structure.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-crm">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What CRMs does Spiff integrate with?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Spiff (now part of Salesforce) integrates natively with <strong>Salesforce CRM</strong> — the most common setup for enterprise SaaS companies. It also integrates with <strong>HubSpot</strong>, and can connect to other systems including NetSuite and custom data sources via API.</p>
+          <p>The quality of the integration matters as much as its existence. Many broken Spiff instances trace back to a poorly configured CRM connection: wrong fields mapped, unreliable sync schedules, or edge cases in the deal data that weren't accounted for during setup. Getting the data pipeline right is foundational — commission logic built on bad data produces wrong answers no matter how well the plan is designed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-multicurrency">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Can Spiff handle multi-currency commission plans?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Yes — Spiff handles multi-currency commission calculations well when configured correctly. For international teams, this means mapping currency fields from the CRM accurately, defining exchange rate logic, and testing plans against deals in each currency before go-live.</p>
+          <p>The Storyblok implementation covered <strong>8 currencies</strong> across international sales teams. When it works correctly, reps in different regions see their statements in local currency, calculated from their actual deal data — and Finance doesn't need to apply manual conversion steps or maintain separate tracking spreadsheets.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-failures">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What are the most common reasons Spiff implementations fail?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Most Spiff implementation problems trace back to one of four root causes:</p>
+          <p><strong>1. Poor CRM data quality.</strong> Spiff calculates what it receives. If Salesforce data is inconsistent — wrong close dates, missing fields, duplicate records — commission outputs will be wrong. Fixing data quality before implementation is essential, not optional.</p>
+          <p><strong>2. Plan logic not fully defined before building.</strong> Commission plans that exist in someone's head or across several spreadsheet versions behave differently when you try to codify them in Spiff. The policy needs to be agreed and documented before configuration starts.</p>
+          <p><strong>3. Edge cases not handled.</strong> What happens to clawbacks on churned accounts? How are partial-month reps treated? Multi-year deals with annual recognitions? Implementations that skip edge cases create disputes at exactly the wrong moment — when reps are reviewing their first statements.</p>
+          <p><strong>4. Insufficient testing against real data.</strong> Plans tested only against toy examples often surface errors when run against 12 months of real deal history. Testing with real historical data before go-live is non-negotiable.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-whatisit">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is Spiff and who is it designed for?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Spiff is an <strong>incentive compensation management (ICM) platform</strong>, now part of Salesforce, that automates commission calculations for sales teams. It replaces manual spreadsheet-based commission tracking with real-time, automated statements that reps can access directly — eliminating the end-of-month scramble and the disputes that come with it.</p>
+          <p>Spiff is best suited to B2B SaaS and technology companies with 20+ quota-carrying reps, moderately-to-highly complex commission plans (accelerators, tiers, multi-product, multi-currency), and Salesforce or HubSpot as their CRM. Companies earlier than that often find simpler tooling sufficient; companies more complex than that benefit significantly from proper implementation support.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" id="faq-consultant">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Do I need a consultant to implement Spiff?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Not always — but the ROI on getting expert help is usually significant. Simple implementations with clean CRM data and straightforward quota plans can be self-served by an experienced RevOps practitioner with time to spare.</p>
+          <p>Most mid-market SaaS companies have more complexity than they initially realise: multiple plan types for different roles, edge cases around clawbacks or deal splits, multi-currency requirements, and CRM data that needs work before Spiff can rely on it. Mistakes at implementation time — incorrect field mapping, plan logic that doesn't actually match the compensation policy, missing edge case handling — create rep trust problems that are slow and expensive to fix retroactively.</p>
+          <p>A specialist consultant also compresses the timeline dramatically. The choice is usually between a self-served project that takes 3–4 months with several iterations, versus a properly scoped engagement that goes live in 4–6 weeks with confidence.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ARTICLES SECTION -->
+    <section class="articles-section" id="guides">
+      <h2>Guides & Insights</h2>
+      <p class="section-note">In-depth articles on getting the most out of Spiff — publishing regularly.</p>
+
+      <div class="article-grid">
+
+        <a href="/case-study/storyblok.html" class="article-card" style="text-decoration:none;color:inherit">
+          <span class="article-tag">Case Study</span>
+          <h3>How We Rebuilt Storyblok's Broken Spiff Instance in 4 Weeks</h3>
+          <p>From misconfigured instance to 100+ reps live across 8 currencies — a full account of what went wrong, how we fixed it, and what it took to get there.</p>
+          <div class="article-meta">
+            <span>Isma Delgado</span>·<span>Full case study</span>
+          </div>
+        </a>
+
+        <div class="article-card">
+          <span class="article-tag">Guide</span>
+          <h3>Spiff Implementation Checklist: What to Do Before You Start</h3>
+          <p>The 10 things you need to have in order before your Spiff implementation begins — CRM data, comp policy, stakeholder alignment, and more.</p>
+          <div class="article-meta">
+            <span>Isma Delgado</span> · <span class="coming-soon-badge">Coming soon</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <span class="article-tag">Deep Dive</span>
+          <h3>Multi-Currency Commission Plans in Spiff: A Practical Guide</h3>
+          <p>How to configure accurate currency handling for international teams — field mapping, exchange rate logic, and the edge cases that cause disputes.</p>
+          <div class="article-meta">
+            <span>Isma Delgado</span> · <span class="coming-soon-badge">Coming soon</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <span class="article-tag">Guide</span>
+          <h3>Accelerators and Tiers in Spiff: How to Build Them Correctly</h3>
+          <p>Step-by-step guide to building tiered accelerator plans — including common mistakes that produce wrong calculations above quota attainment.</p>
+          <div class="article-meta">
+            <span>Isma Delgado</span> · <span class="coming-soon-badge">Coming soon</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <span class="article-tag">Analysis</span>
+          <h3>Why Reps Don't Trust Their Commission Statements (And How to Fix It)</h3>
+          <p>The root causes behind rep distrust in commission data — and the structural changes that fix it, based on real implementation experience.</p>
+          <div class="article-meta">
+            <span>Isma Delgado</span> · <span class="coming-soon-badge">Coming soon</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <span class="article-tag">Comparison</span>
+          <h3>Spiff vs CaptivateIQ vs Everstage: Which ICM Platform Is Right for You?</h3>
+          <p>An honest comparison of the main Spiff alternatives — where each platform wins, where it struggles, and how to make the right choice for your team.</p>
+          <div class="article-meta">
+            <span>Isma Delgado</span> · <span class="coming-soon-badge">Coming soon</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="res-cta">
+      <h2>Have a Spiff question not covered here?</h2>
+      <p>Book a free 30-minute call — no pitch, just a direct conversation about what you're trying to solve.</p>
+      <a href="/#contact">Book a Free Discovery Call</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>© <span id="yr"></span> SpiffRevOps · <a href="/">Home</a> · <a href="/case-study/storyblok.html">Storyblok Case Study</a> · <a href="/#contact">Contact</a> · Independent consultancy, not affiliated with Spiff Inc. or Salesforce.</p>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-q').setAttribute('aria-expanded','false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+</script>
+</body>
+</html>
