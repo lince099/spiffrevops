@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiff Implementation Consultant | SpiffRevOps — Isma Delgado</title>
+<meta name="description" content="Independent Spiff implementation consultant. Work directly with Isma Delgado — a senior RevOps professional who rebuilt Storyblok's Spiff instance from scratch. 100+ reps, 8 currencies, live in 4 weeks.">
+<meta name="keywords" content="Spiff implementation consultant, Spiff RevOps, commission automation, incentive compensation management, Salesforce Spiff, Isma Delgado">
+<meta property="og:title" content="Spiff Implementation Consultant | SpiffRevOps">
+<meta property="og:description" content="Work directly with Isma Delgado — rebuilt Storyblok's Spiff from scratch. 100+ reps, 8 currencies, 4 weeks. Book a free discovery call.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://spiffrevops.com/">
+<meta property="og:site_name" content="SpiffRevOps">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://spiffrevops.com/">
+
+<!-- Person schema — critical for E-E-A-T and LLM citations -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Isma Delgado",
+  "url": "https://spiffrevops.com",
+  "sameAs": ["https://www.linkedin.com/in/ismadelgado/"],
+  "jobTitle": "Spiff Implementation Consultant",
+  "description": "Independent RevOps professional specialising in Spiff implementation, commission plan design, and incentive compensation management for B2B SaaS companies.",
+  "knowsAbout": ["Spiff", "Incentive compensation management", "Revenue operations", "Commission plan design", "Salesforce CRM integration", "Multi-currency compensation", "Sales compensation automation"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "SpiffRevOps",
+    "url": "https://spiffrevops.com"
+  }
+}
+</script>
+
+<!-- ProfessionalService schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SpiffRevOps",
+  "description": "Independent Spiff implementation consultancy run by Isma Delgado. Specialising in commission automation, incentive compensation management, and Spiff setup for B2B SaaS companies.",
+  "url": "https://spiffrevops.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Isma Delgado",
+    "sameAs": "https://www.linkedin.com/in/ismadelgado/"
+  },
+  "serviceType": ["Spiff Implementation", "Commission Plan Design", "Incentive Compensation Management", "CRM Integration", "RevOps Consulting"],
+  "areaServed": "Worldwide",
+  "knowsAbout": ["Spiff implementation","Incentive compensation management","RevOps","Commission plan design","CRM integration","Multi-currency commissions"]
+}
+</script>
+
+<!-- Sitelinks Searchbox -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://spiffrevops.com/",
+  "name": "SpiffRevOps"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f0f4f8;--bg-alt:#e4eaf2;--bg-card:#ffffff;--bg-950:#dce4ee;
+  --border:#c8d4e0;--border-strong:#a8bace;
+  --txt:#0f1e2e;--txt-2:#3a5068;--txt-3:#6b87a0;
+  --acc:#2563eb;--acc-d:#1d4ed8;--acc-l:#3b82f6;--acc-xl:#60a5fa;
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,h6{font-family:'Sora',sans-serif}
+a{color:inherit;text-decoration:none}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{50%{opacity:.5}}
+.anim{animation:.6s ease-out forwards fadeInUp}
+.d1{opacity:0;animation-delay:.1s}.d2{opacity:0;animation-delay:.2s}
+.d3{opacity:0;animation-delay:.3s}.d4{opacity:0;animation-delay:.4s}
+.d5{opacity:0;animation-delay:.5s}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid var(--border);background:rgba(240,244,248,.92);backdrop-filter:blur(8px)}
+.nav-inner{max-width:72rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Sora',sans-serif;font-weight:700;font-size:1.25rem;color:var(--txt);letter-spacing:-.025em}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:.875rem;color:var(--txt-2);transition:color .15s}
+.nav-links a:hover{color:var(--txt)}
+.nav-cta{margin-left:1rem;padding:.5rem 1rem;background:var(--acc-d);color:#fff!important;font-size:.875rem;font-weight:600;border-radius:.5rem;transition:background .15s!important}
+.nav-cta:hover{background:var(--acc-l)!important}
+.mob-btn{display:none;background:none;border:none;color:var(--txt-2);cursor:pointer;padding:4px}
+.mob-btn:hover{color:var(--txt)}
+.mob-nav{display:none;flex-direction:column;gap:1rem;border-top:1px solid var(--border);background:var(--bg);padding:1rem 1.5rem}
+.mob-nav.open{display:flex}
+.mob-nav a{font-size:.875rem;color:var(--txt-2)}
+.mob-nav a:hover{color:var(--txt)}
+.mob-nav .nav-cta{text-align:center;margin-left:0;margin-top:.5rem;display:block;color:#fff!important}
+@media(max-width:768px){.nav-links{display:none}.mob-btn{display:block}}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:4rem;overflow:hidden}
+.hero-glow{position:absolute;top:25%;left:50%;transform:translateX(-50%);width:800px;height:500px;background:rgba(37,99,235,.08);border-radius:9999px;filter:blur(120px);pointer-events:none}
+.hero-content{position:relative;max-width:72rem;margin:0 auto;padding:6rem 1.5rem;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem .75rem;border-radius:9999px;border:1px solid rgba(37,99,235,.25);background:rgba(37,99,235,.08);color:var(--acc-d);font-size:.75rem;font-weight:500;margin-bottom:2rem}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}
+.hero-h1{font-size:clamp(2.25rem,8vw,4.5rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--txt);margin-bottom:1.5rem}
+.hero-h1 span{color:var(--acc)}
+.hero-p{max-width:42rem;margin:0 auto 2.5rem;font-size:1.125rem;color:var(--txt-2);line-height:1.625}
+.hero-btns{display:flex;flex-direction:column;gap:1rem;justify-content:center;align-items:center}
+@media(min-width:640px){.hero-btns{flex-direction:row}}
+.btn-p{padding:1rem 2rem;background:var(--acc-d);color:#fff;font-weight:600;border-radius:.75rem;font-size:1rem;display:inline-block;transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 10px 15px -3px rgba(37,99,235,.25)}
+.btn-p:hover{background:var(--acc-l);transform:translateY(-2px);box-shadow:0 10px 15px -3px rgba(37,99,235,.35)}
+.btn-g{padding:1rem 2rem;border:1px solid var(--border-strong);color:var(--txt-2);font-weight:600;border-radius:.75rem;font-size:1rem;display:inline-block;transition:border-color .15s,color .15s,transform .15s,background .15s;background:var(--bg-card)}
+.btn-g:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px)}
+.hero-trust{margin-top:4rem;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;font-size:.875rem;color:var(--txt-3)}
+.trust-item{display:flex;align-items:center;gap:.5rem}
+.chk{width:1rem;height:1rem;color:var(--acc);flex-shrink:0}
+
+/* SECTIONS */
+.section{padding:6rem 1.5rem}
+.section-alt{background:var(--bg-alt)}
+.inner{max-width:72rem;margin:0 auto}
+.sec-hd{text-align:center;margin-bottom:4rem}
+.eyebrow{color:var(--acc);font-size:.875rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.sec-title{font-size:clamp(1.875rem,4vw,2.25rem);font-weight:700;color:var(--txt);margin-bottom:1rem;line-height:1.2}
+.sec-sub{color:var(--txt-2);max-width:36rem;margin:0 auto;font-size:.9375rem}
+
+/* VALUE PROPS */
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
+.vp{border-radius:1rem;border:1px solid var(--border);background:var(--bg-card);padding:1.5rem;transition:border-color .15s,box-shadow .15s}
+.vp:hover{border-color:var(--acc-xl);box-shadow:0 4px 20px rgba(37,99,235,.08)}
+.vp-ico{display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:.75rem;background:rgba(37,99,235,.08);color:var(--acc);margin-bottom:1rem}
+.vp-t{font-family:'Sora',sans-serif;font-weight:600;color:var(--txt);font-size:1.125rem;margin-bottom:.75rem;line-height:1.375}
+.vp-d{color:var(--txt-2);font-size:.875rem;line-height:1.625}
+.vp-d strong{color:var(--txt);font-weight:600}
+
+/* SERVICES */
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem}
+.svc{border-radius:1rem;border:1px solid var(--border);background:var(--bg-card);padding:1.5rem;transition:border-color .15s,box-shadow .15s}
+.svc:hover{border-color:var(--acc-xl);box-shadow:0 4px 20px rgba(37,99,235,.08)}
+.svc-ico{display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:.75rem;background:rgba(37,99,235,.08);color:var(--acc);margin-bottom:1rem;transition:background .15s}
+.svc:hover .svc-ico{background:rgba(37,99,235,.15)}
+.svc-ico svg{width:1.25rem;height:1.25rem}
+.svc-t{font-family:'Sora',sans-serif;font-weight:600;color:var(--txt);font-size:1rem;margin-bottom:.5rem}
+.svc-d{color:var(--txt-2);font-size:.875rem;line-height:1.625}
+.svc-cta{text-align:center;margin-top:3rem}
+
+/* SOCIAL PROOF */
+.pg{display:grid;gap:2rem;margin-bottom:3rem}
+@media(min-width:768px){.pg{grid-template-columns:1fr 1fr}}
+.pc{border-radius:1rem;border:1px solid var(--border);background:var(--bg-card);padding:2rem;display:flex;flex-direction:column;justify-content:space-between}
+.pc-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}
+.pc-ico{width:2.5rem;height:2.5rem;border-radius:.75rem;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);display:flex;align-items:center;justify-content:center;color:var(--acc)}
+.pc-ico svg{width:1.25rem;height:1.25rem}
+.pc-name{font-weight:600;color:var(--txt);font-size:.875rem}
+.pc-sub{color:var(--txt-3);font-size:.75rem}
+.pc-body{color:var(--txt-2);font-size:.875rem;line-height:1.625}
+.pc-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.pc-tag{padding:.25rem .625rem;font-size:.75rem;border-radius:9999px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:var(--acc-d)}
+.pc-link{display:inline-block;margin-top:1rem;font-size:.8125rem;font-weight:600;color:var(--acc)}
+.testi{border-radius:1rem;border:1px dashed var(--border-strong);background:var(--bg-alt);padding:2rem;display:flex;flex-direction:column;justify-content:center}
+.qm{font-size:2.5rem;color:rgba(37,99,235,.25);font-family:serif;margin-bottom:1rem;line-height:1}
+.testi-t{color:var(--txt-3);font-style:italic;font-size:.875rem;line-height:1.625;margin-bottom:1.5rem}
+.testi-au{display:flex;align-items:center;gap:.75rem}
+.au-av{width:2.25rem;height:2.25rem;border-radius:9999px;background:var(--border);display:flex;align-items:center;justify-content:center;color:var(--txt-3)}
+.au-n{color:var(--txt-3);font-size:.875rem;font-weight:500}
+.au-r{color:var(--txt-3);font-size:.75rem;opacity:.7}
+.sg{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media(min-width:640px){.sg{grid-template-columns:repeat(4,1fr)}}
+.sc{border-radius:.75rem;border:1px solid var(--border);background:var(--bg-card);padding:1rem;text-align:center}
+.sv{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:700;color:var(--acc);margin-bottom:.25rem}
+.sl{color:var(--txt-3);font-size:.75rem}
+
+/* ABOUT */
+.ag{display:grid;gap:3rem;align-items:center}
+@media(min-width:768px){.ag{grid-template-columns:1fr 1fr}}
+.ab-ey{color:var(--acc);font-size:.875rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.ab-t{font-size:clamp(1.875rem,4vw,2.25rem);font-weight:700;color:var(--txt);margin-bottom:1.5rem}
+.ab-body{display:flex;flex-direction:column;gap:1rem;color:var(--txt-2);font-size:.875rem;line-height:1.625}
+.ab-body em{color:var(--txt);font-style:normal;font-weight:500}
+.ab-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+.ab-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.875rem;font-weight:600;color:var(--acc);padding:.5rem .875rem;border:1px solid rgba(37,99,235,.25);border-radius:.5rem;background:rgba(37,99,235,.05)}
+.ab-link:hover{background:rgba(37,99,235,.1)}
+.as{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.ast{border-radius:1rem;border:1px solid var(--border);background:var(--bg-card);padding:1.5rem;text-align:center}
+.asv{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:700;color:var(--acc);margin-bottom:.25rem}
+.asl{color:var(--txt-2);font-size:.75rem}
+
+/* PROCESS */
+.prg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:1rem}
+.prs{border-radius:1rem;border:1px solid var(--border);background:var(--bg-card);padding:1.5rem}
+.prn{font-family:'Sora',sans-serif;font-size:2rem;font-weight:800;color:rgba(37,99,235,.18);line-height:1;margin-bottom:.75rem}
+.prt{font-family:'Sora',sans-serif;font-weight:600;color:var(--txt);font-size:.9375rem;margin-bottom:.5rem}
+.prd{color:var(--txt-2);font-size:.8125rem;line-height:1.625}
+
+/* RESOURCES TEASER */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1rem}
+.res-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.25rem;transition:border-color .15s,box-shadow .15s}
+.res-card:hover{border-color:var(--acc-xl);box-shadow:0 4px 16px rgba(37,99,235,.08)}
+.res-tag{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--acc-d);background:rgba(37,99,235,.08);padding:.25rem .5rem;border-radius:9999px;display:inline-block;margin-bottom:.625rem}
+.res-card h3{font-family:'Sora',sans-serif;font-size:.9375rem;font-weight:600;color:var(--txt);margin-bottom:.5rem;line-height:1.4}
+.res-card p{font-size:.8125rem;color:var(--txt-2);line-height:1.6}
+
+/* CONTACT */
+.con-in{max-width:42rem;margin:0 auto}
+.con-note{color:var(--txt-2);font-size:.875rem;line-height:1.625;text-align:center;margin-bottom:2rem}
+.con-card{border-radius:1rem;border:1px solid var(--border);background:var(--bg-card);padding:2rem;overflow:hidden}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);background:var(--bg-950);padding:3rem 1.5rem}
+.fi{max-width:72rem;margin:0 auto}
+.ft{display:flex;flex-direction:column;gap:2rem;margin-bottom:2rem}
+@media(min-width:768px){.ft{flex-direction:row;justify-content:space-between}}
+.flogo{font-family:'Sora',sans-serif;font-weight:700;font-size:1.25rem;color:var(--txt);margin-bottom:.5rem}
+.flogo span{color:var(--acc)}
+.ftag{color:var(--txt-3);font-size:.875rem;line-height:1.625;max-width:20rem;margin-bottom:.75rem}
+.fn-t{color:var(--txt-2);font-weight:600;font-size:.875rem;margin-bottom:1rem}
+.fn-l{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+.fn-l a{color:var(--txt-3);font-size:.875rem;transition:color .15s}
+.fn-l a:hover{color:var(--txt-2)}
+.fb{padding-top:2rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center}
+@media(min-width:640px){.fb{flex-direction:row;justify-content:space-between}}
+.fc{color:var(--txt-3);font-size:.75rem}
+.fd{color:var(--txt-3);font-size:.75rem;text-align:center;opacity:.7}
+.ss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:640px){.ss-grid{grid-template-columns:1fr}}
+
+/* COOKIE BANNER */
+#ck-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;border-top:1px solid var(--border);padding:1.25rem 2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 -4px 24px rgba(0,0,0,.06)}
+#ck-banner p{font-size:.8125rem;color:var(--txt-2);line-height:1.6;max-width:640px;margin:0}
+#ck-banner a{color:var(--acc);text-decoration:underline}
+.ck-btns{display:flex;gap:.75rem;flex-shrink:0}
+.ck-accept{padding:.5rem 1.25rem;background:var(--acc-d);color:#fff;border:none;border-radius:.5rem;font-family:Inter,sans-serif;font-size:.875rem;font-weight:600;cursor:pointer;transition:background .15s}
+.ck-accept:hover{background:var(--acc-l)}
+.ck-decline{padding:.5rem 1.25rem;background:none;color:var(--txt-3);border:1px solid var(--border-strong);border-radius:.5rem;font-family:Inter,sans-serif;font-size:.875rem;cursor:pointer;transition:border-color .15s,color .15s}
+.ck-decline:hover{border-color:var(--acc);color:var(--acc)}
+</style>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8ETVT3YM7"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('consent','default',{analytics_storage:'denied'});
+gtag('config','G-G8ETVT3YM7');
+</script>
+</head>
+<body>
+
+<div id="ck-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use Google Analytics to understand how visitors find and use this site. No personal data is shared with third parties. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Learn more</a>.</p>
+  <div class="ck-btns">
+    <button class="ck-decline" onclick="ckDecline()">Decline</button>
+    <button class="ck-accept" onclick="ckAccept()">Accept analytics</button>
+  </div>
+</div>
+
+<header>
+  <div class="nav-inner">
+    <a href="#hero" class="logo" aria-label="SpiffRevOps home" style="display:inline-flex;align-items:center;line-height:1">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="165" height="36" aria-hidden="true">
+        <rect x="0" y="2" width="44" height="44" rx="9" fill="#2563eb"/>
+        <path d="M14 38 L22 21 L16 21 L24 7" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="54" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#0f1e2e">Spiff</text>
+        <text x="108" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#2563eb">RevOps</text>
+      </svg>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#social-proof">Clients</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+      </ul>
+    </nav>
+    <button class="mob-btn" aria-label="Toggle menu" onclick="toggleMenu()">
+      <svg id="ico-m" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="ico-x" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="mob-nav" id="mob-nav">
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#social-proof" onclick="closeMenu()">Clients</a>
+    <a href="/resources/" onclick="closeMenu()">Resources</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="#contact" class="nav-cta" onclick="closeMenu()">Book a Call</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge anim d1">
+      <span class="badge-dot"></span>
+      Independent Spiff Implementation Consultant
+    </div>
+    <h1 class="hero-h1 anim d2">
+      Spiff Implementations.<br>
+      <span>Done Right. Done Fast.</span>
+    </h1>
+    <p class="hero-p anim d3">
+      Work directly with Isma Delgado — a senior RevOps professional who rebuilt Storyblok's entire Spiff instance from scratch. 100+ reps, 8 currencies, live in 4 weeks.
+    </p>
+    <div class="hero-btns anim d4">
+      <a href="#contact" class="btn-p">Book a Free Discovery Call</a>
+      <a href="#services" class="btn-g">See What I Do</a>
+    </div>
+    <div class="hero-trust anim d5">
+      <span class="trust-item">
+        <svg class="chk" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Senior RevOps Professional
+      </span>
+      <span class="trust-item">
+        <svg class="chk" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Trusted by Storyblok.com
+      </span>
+      <span class="trust-item">
+        <svg class="chk" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        100% Spiff Focused
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROPS -->
+<section id="value-props" class="section">
+  <div class="inner">
+    <div class="sec-hd">
+      <h2 class="sec-title">Why Work With SpiffRevOps?</h2>
+      <p class="sec-sub">There are plenty of consultancies out there. Here's what makes this different.</p>
+    </div>
+    <div class="g4">
+      <article class="vp">
+        <div class="vp-ico" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+        <h3 class="vp-t">You Work With The Expert Directly</h3>
+        <p class="vp-d">No account managers, no junior consultants you'll never meet again. You get <strong>Isma Delgado</strong> from Day 1 — every call, every build, every decision.</p>
+      </article>
+      <article class="vp">
+        <div class="vp-ico" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <h3 class="vp-t">Fast Time To Value</h3>
+        <p class="vp-d">Implementations delivered in <strong>weeks, not months</strong>. The Storyblok rebuild — 100+ reps, 8 currencies — went live in 4 weeks.</p>
+      </article>
+      <article class="vp">
+        <div class="vp-ico" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+        <h3 class="vp-t">Proven Track Record</h3>
+        <p class="vp-d"><strong>Led the Spiff rebuild for Storyblok.com</strong> — disputes fell from 15/month to 2–3. ~15 hrs/month saved for Finance and RevOps.</p>
+      </article>
+      <article class="vp">
+        <div class="vp-ico" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+        <h3 class="vp-t">Niche Specialist</h3>
+        <p class="vp-d"><strong>100% focused on Spiff.</strong> Not a generalist RevOps consultancy juggling dozens of tools. Deep, concentrated Spiff expertise — built working closely with the Spiff team.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section section-alt">
+  <div class="inner">
+    <div class="sec-hd">
+      <p class="eyebrow">Spiff Setup &amp; Support Services</p>
+      <h2 class="sec-title">Everything You Need to Get Spiff Working Properly</h2>
+      <p class="sec-sub">From first implementation to ongoing optimisation — every engagement is scoped clearly and delivered by someone who knows Spiff inside out.</p>
+    </div>
+    <div class="g3">
+      <article class="svc">
+        <div class="svc-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+        <h3 class="svc-t">New Spiff Implementation</h3>
+        <p class="svc-d">End-to-end setup of Spiff from scratch — plan design, configuration, data mapping, and go-live support. Delivered to production-ready standard.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+        <h3 class="svc-t">Spiff Health Check &amp; Audit</h3>
+        <p class="svc-d">Already on Spiff but something feels off? A structured audit of your current setup to identify gaps, inefficiencies, and quick wins.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3 class="svc-t">Commission Plan Design &amp; Build</h3>
+        <p class="svc-d">Design incentive plans that actually motivate your reps and build them cleanly in Spiff — from simple quota-based to complex multi-variable structures.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+        <h3 class="svc-t">CRM / ERP Integration</h3>
+        <p class="svc-d">Connect Spiff to your existing tech stack — Salesforce, HubSpot, NetSuite, and more. Clean data pipelines, reliable syncs, no manual workarounds.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+        <h3 class="svc-t">Training &amp; Enablement</h3>
+        <p class="svc-d">Get your RevOps and Finance teams confident using Spiff day-to-day. Tailored sessions for admins, managers, and end users.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
+        <h3 class="svc-t">Ongoing Support &amp; Optimisation</h3>
+        <p class="svc-d">Retain me on a flexible basis for ongoing Spiff support — plan updates, new hires, quarterly adjustments, and continuous improvement.</p>
+      </article>
+    </div>
+    <div class="svc-cta">
+      <a href="#contact" class="btn-p">Discuss Your Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="social-proof" class="section">
+  <div class="inner">
+    <div class="sec-hd">
+      <p class="eyebrow">Trusted Experience</p>
+      <h2 class="sec-title">Proven Spiff Implementation Experience</h2>
+    </div>
+    <div class="pg">
+      <div class="pc">
+        <div>
+          <div class="pc-top">
+            <div class="pc-ico"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+            <div>
+              <p class="pc-name">Storyblok.com</p>
+              <p class="pc-sub">Global SaaS — Headless CMS platform</p>
+            </div>
+          </div>
+          <p class="pc-body">Rebuilt a broken Spiff instance end-to-end for Storyblok — a globally recognised headless CMS platform. 100+ reps onboarded, 10 commission plans across 8 currencies, connected to Salesforce. Commission disputes dropped from 15/month to 2–3. ~15 hours per month returned to Finance and RevOps. Live in 4 weeks.</p>
+        </div>
+        <div>
+          <div class="pc-tags" style="margin-bottom:.75rem">
+            <span class="pc-tag">Spiff rebuild</span>
+            <span class="pc-tag">Multi-currency</span>
+            <span class="pc-tag">Accelerators &amp; clawbacks</span>
+            <span class="pc-tag">Salesforce</span>
+            <span class="pc-tag">100+ reps</span>
+          </div>
+          <a href="/case-study/storyblok" class="pc-link">Read the full case study →</a>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="qm">"</div>
+        <p class="testi-t">Working with SpiffRevOps meant we had someone in the weeds with us from day one. Our commission plans were live in under four weeks — accurately reflecting our compensation structure and fully connected to Salesforce. The team finally had visibility they could trust.</p>
+        <div class="testi-au">
+          <div class="au-av" style="background:rgba(37,99,235,.12);color:var(--acc);font-family:'Sora',sans-serif;font-weight:700;font-size:.75rem">MB</div>
+          <div>
+            <p class="au-n" style="color:var(--txt-2)">Manan B.</p>
+            <p class="au-r">Head of RevOps, Storyblok</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sc"><p class="sv">4 weeks</p><p class="sl">Kickoff to go-live</p></div>
+      <div class="sc"><p class="sv">15 → 2–3</p><p class="sl">Monthly disputes</p></div>
+      <div class="sc"><p class="sv">8 currencies</p><p class="sl">International teams</p></div>
+      <div class="sc"><p class="sv">~15 hrs/mo</p><p class="sl">Saved for RevOps &amp; Finance</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section section-alt">
+  <div class="inner">
+    <div class="ag">
+      <div>
+        <p class="ab-ey">Who You'll Work With</p>
+        <h2 class="ab-t">Isma Delgado — Spiff Specialist</h2>
+        <div class="ab-body">
+          <p>I'm a RevOps professional who has built a focused practice around one thing: getting Spiff working properly for companies that care about clean commission operations. I work closely with the Spiff team and stay current on every platform update.</p>
+          <p>I led the complete Spiff rebuild for Storyblok.com — one of the most recognised names in headless SaaS — taking their instance from broken and distrusted to a system their reps, Finance, and RevOps teams rely on daily. 100+ reps, 10 plans, 8 currencies, Salesforce integrated. Live in 4 weeks.</p>
+          <p>SpiffRevOps is a boutique, focused practice. When you hire SpiffRevOps, you get <em>me</em> — from the first discovery call to go-live. No handoffs, no junior consultants, no project management overhead.</p>
+          <p>I'm particularly passionate about helping RevOps and Finance teams get out of spreadsheet hell and into a Spiff instance that's clean, auditable, and actually trusted by reps.</p>
+        </div>
+        <div class="ab-links">
+          <a href="https://www.linkedin.com/in/ismadelgado/" target="_blank" rel="noopener" class="ab-link">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+          <a href="/case-study/storyblok" class="ab-link">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Case Study
+          </a>
+        </div>
+      </div>
+      <div class="as">
+        <div class="ast"><p class="asv">100%</p><p class="asl">Focused on Spiff</p></div>
+        <div class="ast"><p class="asv">Day 1</p><p class="asl">Direct access to Isma</p></div>
+        <div class="ast"><p class="asv">Weeks</p><p class="asl">Not months, to go-live</p></div>
+        <div class="ast"><p class="asv">Enterprise</p><p class="asl">Proven at scale</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM SCREENSHOTS -->
+<section class="section section-alt" id="platform">
+  <div class="inner">
+    <div class="sec-hd">
+      <p class="eyebrow">The Platform</p>
+      <h2 class="sec-title">What Spiff Looks Like When It's Done Right</h2>
+      <p class="sec-sub">Real-time commission visibility for every rep, clean plan logic, and dashboards your finance team can actually trust.</p>
+    </div>
+    <div class="ss-grid">
+      <div style="border-radius:1rem;border:1px solid var(--border);overflow:hidden;background:var(--bg-card);display:flex;flex-direction:column">
+        <div style="height:220px;overflow:hidden;flex-shrink:0">
+          <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/introduction-to-salesforce-spiff-designer/navigate-designer/images/61665cd400952979e8bf6b2b99f17351_kix.o75bev66ot3f.png" alt="Salesforce Spiff Designer — configure commission plan logic with accelerators and tiers" style="width:100%;height:100%;object-fit:cover;object-position:top left;display:block" loading="lazy">
+        </div>
+        <div style="padding:1rem 1.25rem">
+          <p style="font-family:'Sora',sans-serif;font-weight:600;color:var(--txt);font-size:.9375rem;margin-bottom:.25rem">Commission Plan Designer</p>
+          <p style="font-size:.8125rem;color:var(--txt-2);line-height:1.6">Build and manage plans with the flexibility of a spreadsheet and the power of automation — accelerators, tiers, multi-triggers and more.</p>
+        </div>
+      </div>
+      <div style="border-radius:1rem;border:1px solid var(--border);overflow:hidden;background:var(--bg-card);display:flex;flex-direction:column">
+        <div style="height:220px;overflow:hidden;flex-shrink:0">
+          <img src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/salesforce-spiff-statement-design/navigate-statements/images/6a3a0a754c4c453049937b8aeba6ea12_kix.u4g06rhv5flt.png" alt="Salesforce Spiff statement view — real-time rep commission statement with attainment tracking" style="width:100%;height:100%;object-fit:cover;object-position:top left;display:block" loading="lazy">
+        </div>
+        <div style="padding:1rem 1.25rem">
+          <p style="font-family:'Sora',sans-serif;font-weight:600;color:var(--txt);font-size:.9375rem;margin-bottom:.25rem">Real-Time Rep Dashboard</p>
+          <p style="font-size:.8125rem;color:var(--txt-2);line-height:1.6">Every rep sees their earnings, attainment, and pending deals in real time — no more chasing spreadsheets or waiting for month-end statements.</p>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.75rem;color:var(--txt-3);margin-top:1.25rem">Screenshots courtesy of <a href="https://spiff.com" target="_blank" rel="noopener" style="color:var(--acc)">spiff.com</a></p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="section">
+  <div class="inner">
+    <div class="sec-hd">
+      <p class="eyebrow">How It Works</p>
+      <h2 class="sec-title">From First Call to Live Commissions</h2>
+      <p class="sec-sub">A simple, predictable process with no black boxes.</p>
+    </div>
+    <div class="prg">
+      <div class="prs"><span class="prn">01</span><h3 class="prt">Discovery Call</h3><p class="prd">30-minute conversation to understand your comp structure, current tools, and what good looks like for you.</p></div>
+      <div class="prs"><span class="prn">02</span><h3 class="prt">Scope &amp; Proposal</h3><p class="prd">Clear written scope, timeline, and fixed or time-banked pricing. No open-ended retainers unless you want one.</p></div>
+      <div class="prs"><span class="prn">03</span><h3 class="prt">Build &amp; Iterate</h3><p class="prd">Weekly progress demos. Working plans running in your Spiff sandbox fast — with your feedback shaping each sprint.</p></div>
+      <div class="prs"><span class="prn">04</span><h3 class="prt">Go Live</h3><p class="prd">Tested, validated, and signed off. Reps onboarded, admins trained. Handover documentation included.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES TEASER -->
+<section id="resources" class="section section-alt">
+  <div class="inner">
+    <div class="sec-hd">
+      <p class="eyebrow">Resources</p>
+      <h2 class="sec-title">Spiff Guides &amp; Insights</h2>
+      <p class="sec-sub">Practical answers to the questions RevOps and Finance teams ask most often about Spiff.</p>
+    </div>
+    <div class="res-grid">
+      <a href="/case-study/storyblok" style="text-decoration:none;color:inherit">
+        <div class="res-card">
+          <span class="res-tag">Case Study</span>
+          <h3>Storyblok: Rebuilding a Broken Spiff Instance in 4 Weeks</h3>
+          <p>100+ reps, 8 currencies, 10 plans, disputes down 80%. The full story.</p>
+        </div>
+      </a>
+      <a href="/resources/#faq-timeline" style="text-decoration:none;color:inherit">
+        <div class="res-card">
+          <span class="res-tag">FAQ</span>
+          <h3>How Long Does a Spiff Implementation Take?</h3>
+          <p>Timelines, what slows projects down, and what fast looks like in practice.</p>
+        </div>
+      </a>
+      <a href="/resources/#faq-failures" style="text-decoration:none;color:inherit">
+        <div class="res-card">
+          <span class="res-tag">Guide</span>
+          <h3>Why Spiff Implementations Fail (And How to Avoid It)</h3>
+          <p>The four root causes behind broken Spiff instances — based on real experience.</p>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="/resources/" class="btn-g">See All Resources</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="inner">
+    <div class="con-in">
+      <div class="sec-hd">
+        <p class="eyebrow">Get In Touch</p>
+        <h2 class="sec-title">Ready to Move Your Spiff Project Forward?</h2>
+        <p class="con-note">Fill in the form below and Isma will be in touch within 1 business day. No pushy sales calls — just a straightforward conversation about what you need.</p>
+      </div>
+      <div class="con-card">
+        <iframe data-tally-src="https://tally.so/embed/q4WXV8?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="613" frameborder="0" marginheight="0" marginwidth="0" title="SpiffRevOps contact form"></iframe>
+        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <div class="ft">
+      <div>
+        <a href="#hero" aria-label="SpiffRevOps home" style="display:inline-flex;align-items:center;margin-bottom:.5rem">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="148" height="32" aria-hidden="true">
+            <rect x="0" y="2" width="44" height="44" rx="9" fill="#2563eb"/>
+            <path d="M14 38 L22 21 L16 21 L24 7" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="54" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#0f1e2e">Spiff</text>
+            <text x="108" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#2563eb">RevOps</text>
+          </svg>
+        </a>
+        <p class="ftag">Expert Spiff Setup — Weeks, Not Months. By Isma Delgado.</p>
+        <a href="https://www.linkedin.com/in/ismadelgado/" target="_blank" rel="noopener" aria-label="Isma Delgado on LinkedIn" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--txt-3);font-size:.8125rem;margin-top:.5rem">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          Isma Delgado
+        </a>
+      </div>
+      <nav aria-label="Footer navigation">
+        <p class="fn-t">Quick Links</p>
+        <ul class="fn-l">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="/case-study/storyblok">Storyblok Case Study</a></li>
+          <li><a href="/resources/">Resources &amp; FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="fb">
+      <p class="fc">© <span id="yr"></span> SpiffRevOps · Isma Delgado. All rights reserved.</p>
+      <p class="fd">SpiffRevOps is an independent consultancy and is not affiliated with Spiff Inc. or Salesforce.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+function toggleMenu(){var n=document.getElementById('mob-nav'),o=n.classList.toggle('open');document.getElementById('ico-m').style.display=o?'none':'block';document.getElementById('ico-x').style.display=o?'block':'none';}
+function closeMenu(){document.getElementById('mob-nav').classList.remove('open');document.getElementById('ico-m').style.display='block';document.getElementById('ico-x').style.display='none';}
+function ckAccept(){gtag('consent','update',{analytics_storage:'granted'});localStorage.setItem('ck','accepted');document.getElementById('ck-banner').style.display='none';}
+function ckDecline(){localStorage.setItem('ck','declined');document.getElementById('ck-banner').style.display='none';}
+(function(){var c=localStorage.getItem('ck');if(c==='accepted'){gtag('consent','update',{analytics_storage:'granted'});document.getElementById('ck-banner').style.display='none';}else if(c==='declined'){document.getElementById('ck-banner').style.display='none';}})();
+</script>
+</body>
+</html>
