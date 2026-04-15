@@ -1,0 +1,16 @@
+# SpiffRevOps
+
+> Independent Spiff implementation consultancy run by Isma Delgado.
+> Specialising in Spiff implementation, commission plan design, and 
+> incentive compensation management for B2B SaaS companies.
+
+## Key pages
+
+- /: Homepage
+- /case-study/storyblok/: Full case study — rebuilt Storyblok's Spiff 
+  instance for 100+ reps across 8 currencies in 4 weeks
+- /resources/: FAQ and guides on Spiff implementation
+- /resources/spiff-implementation-checklist/: Pre-implementation checklist
+- /resources/multi-currency-commission-plans-spiff/: Multi-currency guide
+- /resources/accelerators-tiers-spiff/: Accelerators and tiers guide
+- /resources/why-reps-dont-trust-commission-statements/: Trust and accuracy
