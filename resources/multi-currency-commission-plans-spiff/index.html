@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Multi-Currency Commission Plans in Spiff: A Practical Guide | SpiffRevOps</title>
-<meta name="description" content="How to configure accurate multi-currency commission calculations in Spiff for international sales teams — field mapping, exchange rate logic, and the edge cases that cause disputes. By Isma Delgado.">
-<meta name="keywords" content="Spiff multi-currency, Spiff international commissions, multi-currency commission plans, Spiff currency configuration, sales compensation multiple currencies">
+<title>Multi-Currency Commission Plans in Salesforce Spiff: A Practical Guide | SpiffRevOps</title>
+<meta name="description" content="How to configure accurate multi-currency commission calculations in Salesforce Spiff for international sales teams — field mapping, exchange rate logic, and the edge cases that cause disputes. By Isma Delgado.">
+<meta name="keywords" content="Salesforce Spiff multi-currency, Salesforce Spiff international commissions, multi-currency commission plans, Salesforce Spiff currency configuration, sales compensation multiple currencies">
 <link rel="canonical" href="https://spiffrevops.com/resources/multi-currency-commission-plans-spiff/">
-<meta property="og:title" content="Multi-Currency Commission Plans in Spiff: A Practical Guide">
-<meta property="og:description" content="How to configure accurate multi-currency commission calculations in Spiff — field mapping, exchange rate logic, and the edge cases that cause disputes.">
+<meta property="og:title" content="Multi-Currency Commission Plans in Salesforce Spiff: A Practical Guide">
+<meta property="og:description" content="How to configure accurate multi-currency commission calculations in Salesforce Spiff — field mapping, exchange rate logic, and the edge cases that cause disputes.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://spiffrevops.com/resources/multi-currency-commission-plans-spiff/">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -20,13 +20,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Multi-Currency Commission Plans in Spiff: A Practical Guide",
-  "description": "How to configure accurate multi-currency commission calculations in Spiff for international sales teams — field mapping, exchange rate logic, and the edge cases that cause disputes.",
+  "headline": "Multi-Currency Commission Plans in Salesforce Spiff: A Practical Guide",
+  "description": "How to configure accurate multi-currency commission calculations in Salesforce Spiff for international sales teams — field mapping, exchange rate logic, and the edge cases that cause disputes.",
   "author": {
     "@type": "Person",
     "name": "Isma Delgado",
     "url": "https://www.linkedin.com/in/ismadelgado/",
-    "jobTitle": "Spiff Implementation Consultant"
+    "jobTitle": "Salesforce Spiff Implementation Consultant"
   },
   "publisher": {"@type": "Organization","name": "SpiffRevOps","url": "https://spiffrevops.com"},
   "mainEntityOfPage": "https://spiffrevops.com/resources/multi-currency-commission-plans-spiff/"
@@ -39,7 +39,7 @@
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Home","item":"https://spiffrevops.com"},
     {"@type":"ListItem","position":2,"name":"Resources","item":"https://spiffrevops.com/resources/"},
-    {"@type":"ListItem","position":3,"name":"Multi-Currency Commission Plans in Spiff","item":"https://spiffrevops.com/resources/multi-currency-commission-plans-spiff/"}
+    {"@type":"ListItem","position":3,"name":"Multi-Currency Commission Plans in Salesforce Spiff","item":"https://spiffrevops.com/resources/multi-currency-commission-plans-spiff/"}
   ]
 }
 </script>
@@ -145,12 +145,12 @@ footer a{color:var(--txt-3)}
       <span>Multi-Currency Commission Plans</span>
     </nav>
     <span class="art-tag">Deep Dive</span>
-    <h1>Multi-Currency Commission Plans in Spiff: A Practical Guide</h1>
-    <p class="lead">Running a global sales team means your commission platform needs to handle multiple currencies accurately and consistently. Spiff does this well — but only when configured correctly. This guide covers the practical steps: how to set up currency handling, how to map fields from Salesforce, which exchange rate approach to use, and the edge cases that cause disputes if you don't plan for them.</p>
+    <h1>Multi-Currency Commission Plans in Salesforce Spiff: A Practical Guide</h1>
+    <p class="lead">Running a global sales team means your commission platform needs to handle multiple currencies accurately and consistently. Salesforce Spiff does this well — but only when configured correctly. This guide covers the practical steps: how to set up currency handling, how to map fields from Salesforce, which exchange rate approach to use, and the edge cases that cause disputes if you don't plan for them.</p>
     <div class="art-meta">
       <a href="https://www.linkedin.com/in/ismadelgado/" target="_blank" rel="noopener">Isma Delgado</a>
       <span>·</span>
-      <span>Spiff Implementation Consultant</span>
+      <span>Salesforce Spiff Implementation Consultant</span>
       <span>·</span>
       <span>SpiffRevOps</span>
     </div>
@@ -159,11 +159,11 @@ footer a{color:var(--txt-3)}
 
 <div class="art-body">
 
-  <p>When I rebuilt the Spiff instance for <a href="/case-study/storyblok/">Storyblok</a>, one of the core requirements was multi-currency support across 8 currencies for their international sales team. Getting this right was foundational — commission calculations that are wrong by even a few percent due to currency handling errors erode rep trust fast.</p>
+  <p>When I rebuilt the Salesforce Spiff instance for <a href="/case-study/storyblok/">Storyblok</a>, one of the core requirements was multi-currency support across 8 currencies for their international sales team. Getting this right was foundational — commission calculations that are wrong by even a few percent due to currency handling errors erode rep trust fast.</p>
   <p>This guide reflects what I learned doing that implementation and others. It assumes you're using Salesforce as your CRM, though the principles apply to HubSpot too.</p>
 
-  <h2>Why Multi-Currency Spiff Implementations Often Go Wrong</h2>
-  <p>The problem isn't usually that Spiff can't handle multiple currencies — it can. The problem is that currency handling touches several layers of the system simultaneously: CRM field configuration, Spiff plan logic, rep quota settings, and payout calculations. When any one of these layers has a gap, the others can't compensate.</p>
+  <h2>Why Multi-Currency Salesforce Spiff Implementations Often Go Wrong</h2>
+  <p>The problem isn't usually that Salesforce Spiff can't handle multiple currencies — it can. The problem is that currency handling touches several layers of the system simultaneously: CRM field configuration, Salesforce Spiff plan logic, rep quota settings, and payout calculations. When any one of these layers has a gap, the others can't compensate.</p>
   <p>The most common failure modes are:</p>
   <ul>
     <li><strong>Deals being pulled in the wrong currency</strong> — because the wrong field is mapped from Salesforce</li>
@@ -172,28 +172,28 @@ footer a{color:var(--txt-3)}
     <li><strong>Quotas set in one currency but deals recognised in another</strong> — the subtlest and most damaging misconfiguration</li>
   </ul>
 
-  <h2>Step-by-Step: Setting Up Multi-Currency in Spiff</h2>
+  <h2>Step-by-Step: Setting Up Multi-Currency in Salesforce Spiff</h2>
 
   <div class="step-grid">
     <div class="step">
       <div class="step-n">1</div>
       <div class="step-body">
         <h3>Enable multi-currency in Salesforce first</h3>
-        <p>Before touching Spiff, confirm that Salesforce has multi-currency enabled and that your opportunity records carry the correct currency code at the deal level. In Salesforce, this means the <code>CurrencyIsoCode</code> field is populated on every opportunity. If Salesforce is storing all deals in a single corporate currency and converting at the CRM level, you'll need to decide whether to use the converted amount or the original deal currency — and that decision affects how you configure Spiff.</p>
+        <p>Before touching Salesforce Spiff, confirm that Salesforce has multi-currency enabled and that your opportunity records carry the correct currency code at the deal level. In Salesforce, this means the <code>CurrencyIsoCode</code> field is populated on every opportunity. If Salesforce is storing all deals in a single corporate currency and converting at the CRM level, you'll need to decide whether to use the converted amount or the original deal currency — and that decision affects how you configure Salesforce Spiff.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">2</div>
       <div class="step-body">
-        <h3>Map the right currency fields in the Spiff integration</h3>
-        <p>When configuring the Salesforce–Spiff integration, you need to explicitly map the currency code field alongside the deal amount. Map <code>CurrencyIsoCode</code> from the Opportunity object so Spiff knows which currency each deal is in. Also confirm whether you're pulling <code>Amount</code> (native currency) or <code>ConvertedAmount</code> (converted to corporate currency). For international teams where reps close deals in their local currency and are paid commissions in that same currency, you want the native <code>Amount</code> field.</p>
+        <h3>Map the right currency fields in the Salesforce Spiff integration</h3>
+        <p>When configuring the Salesforce–Salesforce Spiff integration, you need to explicitly map the currency code field alongside the deal amount. Map <code>CurrencyIsoCode</code> from the Opportunity object so Salesforce Spiff knows which currency each deal is in. Also confirm whether you're pulling <code>Amount</code> (native currency) or <code>ConvertedAmount</code> (converted to corporate currency). For international teams where reps close deals in their local currency and are paid commissions in that same currency, you want the native <code>Amount</code> field.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">3</div>
       <div class="step-body">
         <h3>Set rep quotas in the correct currency</h3>
-        <p>Each rep's quota in Spiff should be set in the same currency as the deals they close. A rep in Germany with a €500k quota should have their attainment calculated in EUR, not converted to USD and compared to a USD quota. Mismatching quota currency and deal currency is the most common cause of incorrect attainment percentages in multi-currency implementations.</p>
+        <p>Each rep's quota in Salesforce Spiff should be set in the same currency as the deals they close. A rep in Germany with a €500k quota should have their attainment calculated in EUR, not converted to USD and compared to a USD quota. Mismatching quota currency and deal currency is the most common cause of incorrect attainment percentages in multi-currency implementations.</p>
       </div>
     </div>
     <div class="step">
@@ -207,14 +207,14 @@ footer a{color:var(--txt-3)}
       <div class="step-n">5</div>
       <div class="step-body">
         <h3>Configure payout currency separately from calculation currency</h3>
-        <p>In some organisations, commissions are calculated in local deal currency but paid out in a base corporate currency (usually USD or EUR). If that's your setup, the conversion needs to happen at payout time, not at calculation time — and the rate used should be clearly documented so reps can verify their statement. Spiff supports this, but it needs to be explicitly configured rather than assumed.</p>
+        <p>In some organisations, commissions are calculated in local deal currency but paid out in a base corporate currency (usually USD or EUR). If that's your setup, the conversion needs to happen at payout time, not at calculation time — and the rate used should be clearly documented so reps can verify their statement. Salesforce Spiff supports this, but it needs to be explicitly configured rather than assumed.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">6</div>
       <div class="step-body">
         <h3>Test against real deals in every currency before go-live</h3>
-        <p>Run the plan logic against at least 3–5 real historical deals per currency before going live. Compare the Spiff output to what was actually paid. This is where configuration errors surface — not in sandbox testing with dummy data. For the Storyblok implementation, we tested across all 8 currencies before any rep saw their first statement, which is why there were no currency-related disputes after launch.</p>
+        <p>Run the plan logic against at least 3–5 real historical deals per currency before going live. Compare the Salesforce Spiff output to what was actually paid. This is where configuration errors surface — not in sandbox testing with dummy data. For the Storyblok implementation, we tested across all 8 currencies before any rep saw their first statement, which is why there were no currency-related disputes after launch.</p>
       </div>
     </div>
   </div>
@@ -254,7 +254,7 @@ footer a{color:var(--txt-3)}
   <h2>The Edge Cases That Cause Disputes</h2>
 
   <h3>Multi-currency splits</h3>
-  <p>When two reps share credit on a deal — one based in the US, one in Germany — and the deal is in EUR, you need a clear rule for how split credit is handled. Is each rep's portion calculated in EUR and then converted for the US rep at payout? Or is everything converted to USD before the split? The answer needs to be in your comp policy before you build it in Spiff.</p>
+  <p>When two reps share credit on a deal — one based in the US, one in Germany — and the deal is in EUR, you need a clear rule for how split credit is handled. Is each rep's portion calculated in EUR and then converted for the US rep at payout? Or is everything converted to USD before the split? The answer needs to be in your comp policy before you build it in Salesforce Spiff.</p>
 
   <h3>Quota changes mid-quarter</h3>
   <p>If a rep's quota is adjusted mid-quarter (territory change, ramp adjustment), and their quota is in a non-base currency, the attainment calculation needs to handle the partial-period correctly. Define whether attainment is pro-rated, reset, or carried forward — and in which currency the calculation runs.</p>
@@ -263,11 +263,11 @@ footer a{color:var(--txt-3)}
   <p>If a deal closes in EUR in month one and churns in month three triggering a clawback, which exchange rate applies to the clawback? The rate at deal close, the rate at churn, or the current rate? This sounds like a detail but it matters — and reps will ask.</p>
 
   <div class="callout callout-danger">
-    <p><strong>The most expensive mistake:</strong> setting up plans that look correct in Spiff's UI but are silently calculating attainment in the wrong currency. This typically goes unnoticed until the first commission cycle when a rep in Germany notices their EUR €500k quota attainment is being compared to deals in USD — and the numbers don't match what they expected. By then, trust is already damaged.</p>
+    <p><strong>The most expensive mistake:</strong> setting up plans that look correct in Salesforce Spiff's UI but are silently calculating attainment in the wrong currency. This typically goes unnoticed until the first commission cycle when a rep in Germany notices their EUR €500k quota attainment is being compared to deals in USD — and the numbers don't match what they expected. By then, trust is already damaged.</p>
   </div>
 
   <div class="callout callout-info">
-    <p><strong>Working through a multi-currency implementation?</strong> This is one of the more technically involved parts of a Spiff setup. If you'd like a direct conversation about your specific currency setup, <a href="/#contact">book a free discovery call</a> — I can usually identify the configuration approach that fits your team in 30 minutes.</p>
+    <p><strong>Working through a multi-currency implementation?</strong> This is one of the more technically involved parts of a Salesforce Spiff setup. If you'd like a direct conversation about your specific currency setup, <a href="/#contact">book a free discovery call</a> — I can usually identify the configuration approach that fits your team in 30 minutes.</p>
   </div>
 
   <div class="related">
@@ -279,18 +279,18 @@ footer a{color:var(--txt-3)}
       </a>
       <a href="/resources/spiff-implementation-checklist/" class="rel-card" style="text-decoration:none;color:inherit">
         <span class="rel-tag">Guide</span>
-        <h3>Spiff Implementation Checklist: What to Do Before You Start</h3>
+        <h3>Salesforce Spiff Implementation Checklist: What to Do Before You Start</h3>
       </a>
       <a href="/resources/accelerators-tiers-spiff/" class="rel-card" style="text-decoration:none;color:inherit">
         <span class="rel-tag">Guide</span>
-        <h3>Accelerators and Tiers in Spiff: How to Build Them Correctly</h3>
+        <h3>Accelerators and Tiers in Salesforce Spiff: How to Build Them Correctly</h3>
       </a>
     </div>
   </div>
 
   <div class="art-cta">
-    <h2>Need help with a multi-currency Spiff setup?</h2>
-    <p>Multi-currency is one of the trickier parts of a Spiff implementation. Let's talk through your specific setup.</p>
+    <h2>Need help with a multi-currency Salesforce Spiff setup?</h2>
+    <p>Multi-currency is one of the trickier parts of a Salesforce Spiff implementation. Let's talk through your specific setup.</p>
     <a href="/#contact">Book a Free Discovery Call</a>
   </div>
 

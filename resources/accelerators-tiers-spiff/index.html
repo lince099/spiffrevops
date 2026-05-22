@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accelerators and Tiers in Spiff: How to Build Them Correctly | SpiffRevOps</title>
-<meta name="description" content="Step-by-step guide to building tiered accelerator commission plans in Spiff — including common mistakes that produce wrong calculations above quota attainment. By Isma Delgado.">
-<meta name="keywords" content="Spiff accelerators, Spiff tiered commission plans, commission accelerators Spiff, Spiff quota attainment tiers, incentive compensation accelerators">
+<title>Accelerators and Tiers in Salesforce Spiff: How to Build Them Correctly | SpiffRevOps</title>
+<meta name="description" content="Step-by-step guide to building tiered accelerator commission plans in Salesforce Spiff — including common mistakes that produce wrong calculations above quota attainment. By Isma Delgado.">
+<meta name="keywords" content="Salesforce Spiff accelerators, Salesforce Spiff tiered commission plans, commission accelerators Salesforce Spiff, Salesforce Spiff quota attainment tiers, incentive compensation accelerators">
 <link rel="canonical" href="https://spiffrevops.com/resources/accelerators-tiers-spiff/">
-<meta property="og:title" content="Accelerators and Tiers in Spiff: How to Build Them Correctly">
-<meta property="og:description" content="Step-by-step guide to building tiered accelerator plans in Spiff — including the mistakes that produce wrong calculations above quota.">
+<meta property="og:title" content="Accelerators and Tiers in Salesforce Spiff: How to Build Them Correctly">
+<meta property="og:description" content="Step-by-step guide to building tiered accelerator plans in Salesforce Spiff — including the mistakes that produce wrong calculations above quota.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://spiffrevops.com/resources/accelerators-tiers-spiff/">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -20,13 +20,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Accelerators and Tiers in Spiff: How to Build Them Correctly",
-  "description": "Step-by-step guide to building tiered accelerator commission plans in Spiff — including common mistakes that produce wrong calculations above quota attainment.",
+  "headline": "Accelerators and Tiers in Salesforce Spiff: How to Build Them Correctly",
+  "description": "Step-by-step guide to building tiered accelerator commission plans in Salesforce Spiff — including common mistakes that produce wrong calculations above quota attainment.",
   "author": {
     "@type": "Person",
     "name": "Isma Delgado",
     "url": "https://www.linkedin.com/in/ismadelgado/",
-    "jobTitle": "Spiff Implementation Consultant"
+    "jobTitle": "Salesforce Spiff Implementation Consultant"
   },
   "publisher": {"@type": "Organization","name": "SpiffRevOps","url": "https://spiffrevops.com"},
   "mainEntityOfPage": "https://spiffrevops.com/resources/accelerators-tiers-spiff/"
@@ -39,7 +39,7 @@
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Home","item":"https://spiffrevops.com"},
     {"@type":"ListItem","position":2,"name":"Resources","item":"https://spiffrevops.com/resources/"},
-    {"@type":"ListItem","position":3,"name":"Accelerators and Tiers in Spiff","item":"https://spiffrevops.com/resources/accelerators-tiers-spiff/"}
+    {"@type":"ListItem","position":3,"name":"Accelerators and Tiers in Salesforce Spiff","item":"https://spiffrevops.com/resources/accelerators-tiers-spiff/"}
   ]
 }
 </script>
@@ -150,15 +150,15 @@ footer a{color:var(--txt-3)}
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a><span>›</span>
       <a href="/resources/">Resources</a><span>›</span>
-      <span>Accelerators and Tiers in Spiff</span>
+      <span>Accelerators and Tiers in Salesforce Spiff</span>
     </nav>
     <span class="art-tag">Guide</span>
-    <h1>Accelerators and Tiers in Spiff: How to Build Them Correctly</h1>
-    <p class="lead">Tiered accelerators are one of the most powerful motivational tools in a commission plan — and one of the most commonly misconfigured in Spiff. This guide covers how accelerators actually work, the two structural approaches you can take, the mistakes that produce wrong calculations above quota, and how to test your plans before reps see their first statement.</p>
+    <h1>Accelerators and Tiers in Salesforce Spiff: How to Build Them Correctly</h1>
+    <p class="lead">Tiered accelerators are one of the most powerful motivational tools in a commission plan — and one of the most commonly misconfigured in Salesforce Spiff. This guide covers how accelerators actually work, the two structural approaches you can take, the mistakes that produce wrong calculations above quota, and how to test your plans before reps see their first statement.</p>
     <div class="art-meta">
       <a href="https://www.linkedin.com/in/ismadelgado/" target="_blank" rel="noopener">Isma Delgado</a>
       <span>·</span>
-      <span>Spiff Implementation Consultant</span>
+      <span>Salesforce Spiff Implementation Consultant</span>
       <span>·</span>
       <span>SpiffRevOps</span>
     </div>
@@ -167,10 +167,10 @@ footer a{color:var(--txt-3)}
 
 <div class="art-body">
 
-  <p>Accelerators are the part of a commission plan that pays reps a higher rate once they hit a certain attainment threshold — typically 100% of quota. A rep who hits 120% of quota should earn more per dollar of revenue than one who hits 95%. Done right, this drives the right behaviour. Done wrong in Spiff, it produces commission statements that are either too high, too low, or inconsistent — and reps notice immediately.</p>
+  <p>Accelerators are the part of a commission plan that pays reps a higher rate once they hit a certain attainment threshold — typically 100% of quota. A rep who hits 120% of quota should earn more per dollar of revenue than one who hits 95%. Done right, this drives the right behaviour. Done wrong in Salesforce Spiff, it produces commission statements that are either too high, too low, or inconsistent — and reps notice immediately.</p>
 
   <h2>The Two Types of Accelerator Structure</h2>
-  <p>Before building anything in Spiff, you need to be clear about which type of accelerator structure you're implementing. The two most common are fundamentally different in how they calculate payout above quota.</p>
+  <p>Before building anything in Salesforce Spiff, you need to be clear about which type of accelerator structure you're implementing. The two most common are fundamentally different in how they calculate payout above quota.</p>
 
   <h3>Marginal (incremental) tiers</h3>
   <p>Each tier rate applies only to the revenue within that tier — similar to how income tax brackets work. A rep earning above 100% quota gets the base rate on the first 100% of quota, and the accelerated rate only on the revenue above that threshold.</p>
@@ -200,7 +200,7 @@ footer a{color:var(--txt-3)}
   </div>
 
   <div class="callout callout-warn">
-    <p><strong>The most common mistake:</strong> a comp policy says "accelerator above 100%" without specifying which type. The plan designer assumes marginal; the Sales leader assumed retroactive. The rep hits 110% and notices their payout is $8,000 lower than expected. This ambiguity needs to be resolved in the comp policy document before the plan is built in Spiff — not discovered after go-live.</p>
+    <p><strong>The most common mistake:</strong> a comp policy says "accelerator above 100%" without specifying which type. The plan designer assumes marginal; the Sales leader assumed retroactive. The rep hits 110% and notices their payout is $8,000 lower than expected. This ambiguity needs to be resolved in the comp policy document before the plan is built in Salesforce Spiff — not discovered after go-live.</p>
   </div>
 
   <h2>A Typical Tiered Accelerator Structure</h2>
@@ -218,18 +218,18 @@ footer a{color:var(--txt-3)}
     </tbody>
   </table>
 
-  <p>Whether each tier is marginal or retroactive is the key design decision. Most plans use marginal tiers for the lower bands and a retroactive bump at the stretch tier — but whatever you choose, it needs to be explicit in the policy and mirrored exactly in the Spiff configuration.</p>
+  <p>Whether each tier is marginal or retroactive is the key design decision. Most plans use marginal tiers for the lower bands and a retroactive bump at the stretch tier — but whatever you choose, it needs to be explicit in the policy and mirrored exactly in the Salesforce Spiff configuration.</p>
 
-  <h2>How to Build Tiers in Spiff: The Key Decisions</h2>
+  <h2>How to Build Tiers in Salesforce Spiff: The Key Decisions</h2>
 
   <h3>Attainment-based vs revenue-based triggers</h3>
-  <p>Tiers can be triggered by attainment percentage (rep hits 100% of quota) or by an absolute revenue amount (rep closes $500k). Attainment-based tiers are more common for quota-carrying roles because they work fairly across reps with different quota sizes. Revenue-based triggers are sometimes used for overlay roles or SPIFFs. Make sure Spiff is configured to trigger tiers the same way your policy defines them.</p>
+  <p>Tiers can be triggered by attainment percentage (rep hits 100% of quota) or by an absolute revenue amount (rep closes $500k). Attainment-based tiers are more common for quota-carrying roles because they work fairly across reps with different quota sizes. Revenue-based triggers are sometimes used for overlay roles or SPIFFs. Make sure Salesforce Spiff is configured to trigger tiers the same way your policy defines them.</p>
 
   <h3>Cumulative vs period-based calculation</h3>
-  <p>Does the accelerator apply based on cumulative attainment across the full year, or is it reset each quarter? A rep who hits 130% of their Q1 quota benefits from the stretch accelerator in Q1 — but do they start Q2 at zero again? Annual cumulative plans are more motivating late in the year but harder to model. Quarterly resets are cleaner and more predictable. Either can be built in Spiff, but the configuration is different and it must match your policy.</p>
+  <p>Does the accelerator apply based on cumulative attainment across the full year, or is it reset each quarter? A rep who hits 130% of their Q1 quota benefits from the stretch accelerator in Q1 — but do they start Q2 at zero again? Annual cumulative plans are more motivating late in the year but harder to model. Quarterly resets are cleaner and more predictable. Either can be built in Salesforce Spiff, but the configuration is different and it must match your policy.</p>
 
   <h3>The kicker vs the multiplier</h3>
-  <p>Some plans don't use tiered rates — they use a multiplier applied to the total commission once attainment crosses a threshold. For example: earn standard commission all year, then if you hit 120% of annual quota, your total commission is multiplied by 1.25. This is called an annual kicker or multiplier. Spiff can handle this but it requires a specific configuration approach — it's not the same as building standard tiers.</p>
+  <p>Some plans don't use tiered rates — they use a multiplier applied to the total commission once attainment crosses a threshold. For example: earn standard commission all year, then if you hit 120% of annual quota, your total commission is multiplied by 1.25. This is called an annual kicker or multiplier. Salesforce Spiff can handle this but it requires a specific configuration approach — it's not the same as building standard tiers.</p>
 
   <h2>Testing Your Accelerator Plans Before Go-Live</h2>
   <p>Accelerator configurations are the most likely place for silent errors — calculations that look right in the UI but produce wrong outputs for specific attainment scenarios. Before any rep sees their statement, test these specific scenarios manually:</p>
@@ -242,11 +242,11 @@ footer a{color:var(--txt-3)}
   </ul>
 
   <div class="callout callout-info">
-    <p><strong>Run these tests against real historical deals.</strong> Take 5–10 reps from the previous quarter, run their deal data through the new plan configuration, and compare the Spiff output to what they were actually paid. Discrepancies here are much better to find before launch than after.</p>
+    <p><strong>Run these tests against real historical deals.</strong> Take 5–10 reps from the previous quarter, run their deal data through the new plan configuration, and compare the Salesforce Spiff output to what they were actually paid. Discrepancies here are much better to find before launch than after.</p>
   </div>
 
   <h2>The Overlap With Clawbacks</h2>
-  <p>If your plan includes both accelerators and clawbacks — which Storyblok's did — you need to define how they interact. If a rep earned a deal at the 125% tier (14% rate) and that deal then churns and triggers a clawback, is the clawback calculated at the 14% rate they were paid, or the 8% base rate? This needs to be in the policy and mirrored in the Spiff configuration. Most companies use the rate at which the commission was originally paid, but it needs to be explicit.</p>
+  <p>If your plan includes both accelerators and clawbacks — which Storyblok's did — you need to define how they interact. If a rep earned a deal at the 125% tier (14% rate) and that deal then churns and triggers a clawback, is the clawback calculated at the 14% rate they were paid, or the 8% base rate? This needs to be in the policy and mirrored in the Salesforce Spiff configuration. Most companies use the rate at which the commission was originally paid, but it needs to be explicit.</p>
 
   <div class="related">
     <h2>Related resources</h2>
@@ -257,7 +257,7 @@ footer a{color:var(--txt-3)}
       </a>
       <a href="/resources/spiff-implementation-checklist/" class="rel-card" style="text-decoration:none;color:inherit">
         <span class="rel-tag">Guide</span>
-        <h3>Spiff Implementation Checklist</h3>
+        <h3>Salesforce Spiff Implementation Checklist</h3>
       </a>
       <a href="/resources/why-reps-dont-trust-commission-statements/" class="rel-card" style="text-decoration:none;color:inherit">
         <span class="rel-tag">Analysis</span>
