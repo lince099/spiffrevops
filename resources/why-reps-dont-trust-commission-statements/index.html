@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Why Reps Don't Trust Their Commission Statements (And How to Fix It) | SpiffRevOps</title>
-<meta name="description" content="The root causes behind rep distrust in commission data — and the structural changes that fix it, based on real Spiff implementation experience. By Isma Delgado.">
-<meta name="keywords" content="commission statement trust, rep commission disputes, Spiff rep adoption, commission automation trust, sales commission accuracy, incentive compensation disputes">
+<meta name="description" content="The root causes behind rep distrust in commission data — and the structural changes that fix it, based on real Salesforce Spiff implementation experience. By Isma Delgado.">
+<meta name="keywords" content="commission statement trust, rep commission disputes, Salesforce Spiff rep adoption, commission automation trust, sales commission accuracy, incentive compensation disputes">
 <link rel="canonical" href="https://spiffrevops.com/resources/why-reps-dont-trust-commission-statements/">
 <meta property="og:title" content="Why Reps Don't Trust Their Commission Statements (And How to Fix It)">
 <meta property="og:description" content="The root causes behind rep distrust in commission data — and the structural changes that fix it, based on real implementation experience.">
@@ -21,12 +21,12 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Why Reps Don't Trust Their Commission Statements (And How to Fix It)",
-  "description": "The root causes behind rep distrust in commission data — and the structural changes that fix it, based on real Spiff implementation experience.",
+  "description": "The root causes behind rep distrust in commission data — and the structural changes that fix it, based on real Salesforce Spiff implementation experience.",
   "author": {
     "@type": "Person",
     "name": "Isma Delgado",
     "url": "https://www.linkedin.com/in/ismadelgado/",
-    "jobTitle": "Spiff Implementation Consultant"
+    "jobTitle": "Salesforce Spiff Implementation Consultant"
   },
   "publisher": {"@type": "Organization","name": "SpiffRevOps","url": "https://spiffrevops.com"},
   "mainEntityOfPage": "https://spiffrevops.com/resources/why-reps-dont-trust-commission-statements/"
@@ -132,7 +132,7 @@ footer a{color:var(--txt-3)}
     </a>
     <nav><ul class="nav-links">
       <li><a href="/#services">Services</a></li>
-      <li><a href="/#about">About</a></li>
+      <li><a href="/about/">About</a></li>
       <li><a href="/resources/">Resources</a></li>
       <li><a href="/#contact" class="nav-cta">Book a Call</a></li>
     </ul></nav>
@@ -153,7 +153,7 @@ footer a{color:var(--txt-3)}
     <div class="art-meta">
       <a href="https://www.linkedin.com/in/ismadelgado/" target="_blank" rel="noopener">Isma Delgado</a>
       <span>·</span>
-      <span>Spiff Implementation Consultant</span>
+      <span>Salesforce Spiff Implementation Consultant</span>
       <span>·</span>
       <span>SpiffRevOps</span>
     </div>
@@ -162,7 +162,7 @@ footer a{color:var(--txt-3)}
 
 <div class="art-body">
 
-  <p>When I took on the <a href="/case-study/storyblok/">Storyblok Spiff rebuild</a>, the commission system was already in place — but trust had broken down. Reps were raising an average of 15 queries and disputes per month. Finance was spending hours each cycle investigating discrepancies. The reps weren't being difficult: the statements genuinely didn't reflect what they believed they'd earned.</p>
+  <p>When I took on the <a href="/case-study/storyblok/">Storyblok Salesforce Spiff rebuild</a>, the commission system was already in place — but trust had broken down. Reps were raising an average of 15 queries and disputes per month. Finance was spending hours each cycle investigating discrepancies. The reps weren't being difficult: the statements genuinely didn't reflect what they believed they'd earned.</p>
 
   <p>After the rebuild, monthly disputes dropped to 2–3. That shift — from a system people work around to a system people rely on — is what a good implementation actually delivers. Here's what causes distrust, and what fixes it.</p>
 
@@ -178,11 +178,11 @@ footer a{color:var(--txt-3)}
 
     <div class="cause">
       <h3>1. The system doesn't match what reps were told</h3>
-      <p>This is the most fundamental cause and the hardest to fix retroactively. When a rep joins, they're shown a commission structure in an offer letter or a comp plan summary. If the Spiff configuration doesn't exactly match that document — different accelerator thresholds, different rate at a certain tier, different clawback terms — the statement will never match their mental model of what they should earn.</p>
-      <p>Reps do the maths on their deals. They know roughly what they expect to be paid. When the number in Spiff doesn't match, they assume the system is wrong — not that their mental model is.</p>
+      <p>This is the most fundamental cause and the hardest to fix retroactively. When a rep joins, they're shown a commission structure in an offer letter or a comp plan summary. If the Salesforce Spiff configuration doesn't exactly match that document — different accelerator thresholds, different rate at a certain tier, different clawback terms — the statement will never match their mental model of what they should earn.</p>
+      <p>Reps do the maths on their deals. They know roughly what they expect to be paid. When the number in Salesforce Spiff doesn't match, they assume the system is wrong — not that their mental model is.</p>
       <div class="fix">
         <div class="fix-label">The fix</div>
-        <p>Every plan in Spiff must be built from a single authoritative comp policy document that has been signed off by Finance and RevOps. The plan designer should be able to trace every configuration decision back to a specific clause in that document. If there's no such document, write it before building anything.</p>
+        <p>Every plan in Salesforce Spiff must be built from a single authoritative comp policy document that has been signed off by Finance and RevOps. The plan designer should be able to trace every configuration decision back to a specific clause in that document. If there's no such document, write it before building anything.</p>
       </div>
     </div>
 
@@ -191,13 +191,13 @@ footer a{color:var(--txt-3)}
       <p>A rep closes a deal on March 28th. They expect to see it in their March statement. Instead it appears in April — or it appears in March but then disappears and reapplies in April. This happens when the CRM sync schedule, the commission period definition, and the deal recognition rules aren't aligned. The rep isn't wrong to be confused: the deal closed when they think it did. The system is just applying a recognition logic they weren't told about.</p>
       <div class="fix">
         <div class="fix-label">The fix</div>
-        <p>Define explicitly in the comp policy: which date field drives commission recognition (close date, invoice date, cash receipt date). Configure Spiff to use exactly that field. Communicate to reps which date determines their payment cycle. Consistency is more important than which date you choose.</p>
+        <p>Define explicitly in the comp policy: which date field drives commission recognition (close date, invoice date, cash receipt date). Configure Salesforce Spiff to use exactly that field. Communicate to reps which date determines their payment cycle. Consistency is more important than which date you choose.</p>
       </div>
     </div>
 
     <div class="cause">
       <h3>3. CRM data doesn't match what the rep closed</h3>
-      <p>Spiff calculates based on what's in Salesforce. If the deal amount in Salesforce differs from what the rep negotiated — because it was updated post-close, because a discount was applied after the fact, because the opportunity was edited for finance purposes — the commission in Spiff will reflect the Salesforce value, not the rep's expected value. The rep sees a lower number and assumes the system is underpaying them.</p>
+      <p>Salesforce Spiff calculates based on what's in Salesforce. If the deal amount in Salesforce differs from what the rep negotiated — because it was updated post-close, because a discount was applied after the fact, because the opportunity was edited for finance purposes — the commission in Salesforce Spiff will reflect the Salesforce value, not the rep's expected value. The rep sees a lower number and assumes the system is underpaying them.</p>
       <div class="fix">
         <div class="fix-label">The fix</div>
         <p>Lock the commission-bearing fields on closed won opportunities. If a deal needs to be modified after close for finance purposes, use a separate field rather than overwriting the original values. Add a process for reps to flag CRM discrepancies through a defined channel, rather than raising ad hoc disputes.</p>
@@ -209,7 +209,7 @@ footer a{color:var(--txt-3)}
       <p>Reps trust numbers they can verify. When a commission statement shows a total payout with no breakdown — no per-deal detail, no attainment percentage, no rate applied — reps can't verify it even if it's correct. The opacity itself generates distrust. This is especially true for plans with accelerators: a rep who thinks they're at 105% attainment but can't see how attainment is calculated in the statement will always wonder if the accelerated rate is being applied correctly.</p>
       <div class="fix">
         <div class="fix-label">The fix</div>
-        <p>Configure Spiff statements to show deal-level detail: which deals are included, the value used for each, the attainment percentage, and the rate applied. Spiff supports this — it just needs to be set up. A rep who can trace every line of their statement to a specific deal in Salesforce almost never raises disputes.</p>
+        <p>Configure Salesforce Spiff statements to show deal-level detail: which deals are included, the value used for each, the attainment percentage, and the rate applied. Salesforce Spiff supports this — it just needs to be set up. A rep who can trace every line of their statement to a specific deal in Salesforce almost never raises disputes.</p>
       </div>
     </div>
 
@@ -245,15 +245,15 @@ footer a{color:var(--txt-3)}
     <div class="related-grid">
       <a href="/case-study/storyblok/" class="rel-card" style="text-decoration:none;color:inherit">
         <span class="rel-tag">Case Study</span>
-        <h3>Storyblok: From 15 Disputes/Month to 2–3 After a Full Spiff Rebuild</h3>
+        <h3>Storyblok: From 15 Disputes/Month to 2–3 After a Full Salesforce Spiff Rebuild</h3>
       </a>
       <a href="/resources/spiff-implementation-checklist/" class="rel-card" style="text-decoration:none;color:inherit">
         <span class="rel-tag">Guide</span>
-        <h3>Spiff Implementation Checklist: What to Do Before You Start</h3>
+        <h3>Salesforce Spiff Implementation Checklist: What to Do Before You Start</h3>
       </a>
       <a href="/resources/accelerators-tiers-spiff/" class="rel-card" style="text-decoration:none;color:inherit">
         <span class="rel-tag">Guide</span>
-        <h3>Accelerators and Tiers in Spiff: How to Build Them Correctly</h3>
+        <h3>Accelerators and Tiers in Salesforce Spiff: How to Build Them Correctly</h3>
       </a>
     </div>
   </div>
