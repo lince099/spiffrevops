@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
   <defs>
     <style>@import url('https://fonts.googleapis.com/css2?family=Sora:wght@800&amp;family=Inter:wght@500&amp;display=swap');</style>
-    <radialGradient id="rg" cx="80%" cy="50%" r="50%">
+    <radialGradient id="rg" cx="75%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#2563eb" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#0f1e2e" stop-opacity="0"/>
     </radialGradient>
@@ -11,32 +11,32 @@
   <rect width="1584" height="396" fill="#0f1e2e"/>
   <rect width="1584" height="396" fill="url(#rg)"/>
 
-  <!-- Large ghosted icon watermark (right side) -->
-  <g opacity="0.07" transform="translate(1155, 28)">
-    <rect width="340" height="340" rx="68" fill="#2563eb"/>
-    <path d="M105 307 L163 183 L124 183 L183 79"
-          fill="none" stroke="white" stroke-width="20"
+  <!-- Large ghosted icon watermark (left side — sits behind LinkedIn logo overlay) -->
+  <g opacity="0.07" transform="translate(55, 28)">
+    <rect width="320" height="320" rx="64" fill="#2563eb"/>
+    <path d="M87 288 L136 152 L103 152 L152 65"
+          fill="none" stroke="white" stroke-width="19"
           stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
-  <!-- Logo icon (60×60) -->
-  <rect x="72" y="44" width="60" height="60" rx="13" fill="#2563eb"/>
-  <path d="M90 98 L101 76 L94 76 L104 58"
-        fill="none" stroke="white" stroke-width="3.7"
+  <!-- Logo icon (52×52) — right content block -->
+  <rect x="780" y="44" width="52" height="52" rx="11" fill="#2563eb"/>
+  <path d="M796 91 L805 72 L799 72 L808 56"
+        fill="none" stroke="white" stroke-width="3.2"
         stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Logo brand name -->
-  <text x="148" y="85" font-family="'Sora','Arial Black',Arial,sans-serif" font-weight="800" font-size="32" letter-spacing="-0.03em" fill="#ffffff">Spiff</text>
-  <text x="240" y="85" font-family="'Sora','Arial Black',Arial,sans-serif" font-weight="800" font-size="32" letter-spacing="-0.03em" fill="#2563eb">RevOps</text>
+  <text x="846" y="82" font-family="'Sora','Arial Black',Arial,sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em" fill="#ffffff">Spiff</text>
+  <text x="929" y="82" font-family="'Sora','Arial Black',Arial,sans-serif" font-weight="800" font-size="28" letter-spacing="-0.03em" fill="#2563eb">RevOps</text>
 
   <!-- Tagline line 1 -->
-  <text x="72" y="200" font-family="'Sora','Arial Black',Arial,sans-serif" font-weight="800" font-size="64" letter-spacing="-0.04em" fill="#ffffff">Spiff Implementations.</text>
+  <text x="780" y="193" font-family="'Sora','Arial Black',Arial,sans-serif" font-weight="800" font-size="56" letter-spacing="-0.04em" fill="#ffffff">Spiff Implementations.</text>
 
   <!-- Tagline line 2 -->
-  <text x="72" y="282" font-family="'Sora','Arial Black',Arial,sans-serif" font-weight="800" font-size="64" letter-spacing="-0.04em"><tspan fill="#ffffff">Done Right. </tspan><tspan fill="#2563eb">Done Fast.</tspan></text>
+  <text x="780" y="263" font-family="'Sora','Arial Black',Arial,sans-serif" font-weight="800" font-size="56" letter-spacing="-0.04em"><tspan fill="#ffffff">Done Right. </tspan><tspan fill="#2563eb">Done Fast.</tspan></text>
 
   <!-- Website URL -->
-  <text x="72" y="340" font-family="'Inter',Arial,sans-serif" font-weight="500" font-size="22" fill="#60a5fa">spiffrevops.com</text>
+  <text x="780" y="320" font-family="'Inter',Arial,sans-serif" font-weight="500" font-size="22" fill="#60a5fa">spiffrevops.com</text>
 
   <!-- Bottom accent bar -->
   <rect x="0" y="384" width="1584" height="12" fill="#2563eb"/>
