@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce Spiff vs Spreadsheets: When to Make the Switch | SpiffRevOps</title>
+<meta name="description" content="Honest guide to when spreadsheets still work for sales commission calculations — and the specific thresholds (team size, time, error cost) that tell you it's time to move to Salesforce Spiff. By Isma Delgado.">
+<meta name="keywords" content="Salesforce Spiff vs spreadsheets, commission spreadsheet replacement, when to implement Spiff, sales commission automation, commission calculation software, Salesforce Spiff implementation">
+<link rel="canonical" href="https://spiffrevops.com/resources/salesforce-spiff-vs-spreadsheets/">
+<meta property="og:title" content="Salesforce Spiff vs Spreadsheets: When to Make the Switch">
+<meta property="og:description" content="Honest guide to when spreadsheets still work for commissions — and the specific signals that tell you it's time to automate with Salesforce Spiff.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://spiffrevops.com/resources/salesforce-spiff-vs-spreadsheets/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Salesforce Spiff vs Spreadsheets: When to Make the Switch","datePublished":"2026-05-27","author":{"@type":"Person","name":"Isma Delgado","url":"https://spiffrevops.com/about/","jobTitle":"Salesforce Spiff Implementation Consultant"},"publisher":{"@type":"Organization","name":"SpiffRevOps","url":"https://spiffrevops.com"},"mainEntityOfPage":"https://spiffrevops.com/resources/salesforce-spiff-vs-spreadsheets/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spiffrevops.com"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://spiffrevops.com/resources/"},{"@type":"ListItem","position":3,"name":"Salesforce Spiff vs Spreadsheets","item":"https://spiffrevops.com/resources/salesforce-spiff-vs-spreadsheets/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f0f4f8;--bg-alt:#e4eaf2;--bg-card:#ffffff;--border:#c8d4e0;--border-strong:#a8bace;--txt:#0f1e2e;--txt-2:#3a5068;--txt-3:#6b87a0;--acc:#2563eb;--acc-d:#1d4ed8;--acc-l:#3b82f6}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Sora',sans-serif}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid var(--border);background:rgba(240,244,248,.92);backdrop-filter:blur(8px)}
+.nav-inner{max-width:72rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-links{display:flex;align-items:center;gap:1.5rem;list-style:none}
+.nav-links a{font-size:.875rem;color:var(--txt-2)}
+.nav-links a:hover{color:var(--txt);text-decoration:none}
+.nav-cta{padding:.5rem 1rem;background:var(--acc-d);color:#fff!important;font-size:.875rem;font-weight:600;border-radius:.5rem}
+.nav-cta:hover{background:var(--acc-l)!important;text-decoration:none!important}
+main{padding-top:4rem}
+.art-hero{background:var(--bg-card);border-bottom:1px solid var(--border);padding:3.5rem 1.5rem 2.5rem}
+.art-inner{max-width:48rem;margin:0 auto}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:var(--txt-3);margin-bottom:1.25rem;flex-wrap:wrap}
+.breadcrumb a{color:var(--txt-3)}
+.breadcrumb a:hover{color:var(--txt-2);text-decoration:none}
+.breadcrumb span{opacity:.5}
+.art-tag{display:inline-block;padding:.25rem .75rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;border-radius:9999px;background:rgba(37,99,235,.08);color:var(--acc-d);margin-bottom:1rem}
+.art-hero h1{font-size:clamp(1.75rem,4vw,2.375rem);font-weight:800;letter-spacing:-.025em;line-height:1.15;color:var(--txt);margin-bottom:1rem}
+.art-hero .lead{font-size:1rem;color:var(--txt-2);line-height:1.75;margin-bottom:1.5rem}
+.art-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.8125rem;color:var(--txt-3);padding-top:1.25rem;border-top:1px solid var(--border)}
+.art-meta a{color:var(--txt-3);font-weight:600}
+.art-meta a:hover{color:var(--acc);text-decoration:none}
+.art-body{max-width:48rem;margin:0 auto;padding:3rem 1.5rem}
+.art-body h2{font-size:1.375rem;font-weight:700;color:var(--txt);margin:2.5rem 0 1rem;padding-bottom:.625rem;border-bottom:2px solid var(--border)}
+.art-body h3{font-size:1.0625rem;font-weight:600;color:var(--txt);margin:1.75rem 0 .625rem}
+.art-body p{color:var(--txt-2);font-size:.9375rem;line-height:1.8;margin-bottom:1rem}
+.art-body ul,.art-body ol{color:var(--txt-2);font-size:.9375rem;line-height:1.8;margin:1rem 0 1rem 1.5rem}
+.art-body li{margin-bottom:.5rem}
+.art-body strong{color:var(--txt);font-weight:600}
+.art-body a{color:var(--acc)}
+.callout{border-radius:.75rem;padding:1.25rem 1.5rem;margin:1.5rem 0}
+.callout-warn{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.25);border-left:3px solid #f59e0b}
+.callout-info{background:rgba(37,99,235,.05);border:1px solid rgba(37,99,235,.2);border-left:3px solid var(--acc)}
+.callout-danger{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.2);border-left:3px solid #ef4444}
+.callout-green{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-left:3px solid #10b981}
+.callout p{font-size:.875rem;color:var(--txt-2);line-height:1.7;margin:0}
+.callout p+p{margin-top:.625rem}
+.callout strong{color:var(--txt)}
+.decision-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.875rem}
+.decision-table th{padding:.75rem 1rem;text-align:left;font-family:'Sora',sans-serif;font-weight:600;font-size:.8125rem}
+.decision-table th:first-child{background:var(--bg-alt);color:var(--txt)}
+.decision-table th.stay{background:rgba(16,185,129,.1);color:#065f46}
+.decision-table th.switch{background:rgba(37,99,235,.08);color:var(--acc-d)}
+.decision-table td{padding:.75rem 1rem;border-top:1px solid var(--border);color:var(--txt-2);vertical-align:top}
+.decision-table td:first-child{font-weight:500;color:var(--txt);background:var(--bg-alt)}
+.decision-table td.stay-cell{background:rgba(16,185,129,.04)}
+.decision-table td.switch-cell{background:rgba(37,99,235,.03)}
+.sign-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1.5rem 0}
+.sign-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.25rem;border-left:4px solid #f59e0b}
+.sign-card h3{font-family:'Sora',sans-serif;font-size:.9375rem;font-weight:700;color:var(--txt);margin-bottom:.5rem}
+.sign-card p{font-size:.8125rem;color:var(--txt-2);line-height:1.65;margin:0}
+.cost-box{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.5rem;margin:1.5rem 0}
+.cost-box .cost-label{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--acc-d);margin-bottom:.75rem}
+.cost-box h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:600;color:var(--txt);margin-bottom:.75rem}
+.cost-box p{font-size:.875rem;color:var(--txt-2);line-height:1.7;margin-bottom:.5rem}
+.cost-box p:last-child{margin-bottom:0}
+.cost-box .calc{background:var(--bg-alt);border-radius:.5rem;padding:1rem;margin-top:.75rem;font-size:.8125rem;color:var(--txt-2);line-height:1.8}
+.cost-box .calc strong{color:var(--acc-d)}
+.steps-list{counter-reset:steps;list-style:none;margin:1rem 0;padding:0}
+.steps-list li{counter-increment:steps;display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+.steps-list li:last-child{border-bottom:none}
+.steps-list li::before{content:counter(steps);display:flex;align-items:center;justify-content:center;min-width:2rem;height:2rem;border-radius:50%;background:var(--acc-d);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.8125rem;flex-shrink:0;margin-top:.1rem}
+.steps-list li .step-body{flex:1}
+.steps-list li .step-title{font-family:'Sora',sans-serif;font-weight:600;font-size:.9375rem;color:var(--txt);margin-bottom:.375rem}
+.steps-list li .step-desc{font-size:.875rem;color:var(--txt-2);line-height:1.7}
+.art-cta{background:var(--acc-d);border-radius:1rem;padding:2.5rem;text-align:center;margin-top:3rem}
+.art-cta h2{color:#fff;font-size:1.375rem;margin-bottom:.625rem}
+.art-cta p{color:rgba(255,255,255,.75);font-size:.9rem;margin-bottom:1.25rem}
+.art-cta a{display:inline-block;padding:.75rem 1.75rem;background:#fff;color:var(--acc-d);font-weight:700;border-radius:.75rem;font-size:.9rem}
+.art-cta a:hover{text-decoration:none;background:rgba(255,255,255,.9)}
+.related{margin-top:3rem;padding-top:2rem;border-top:2px solid var(--border)}
+.related h2{font-size:1.125rem;font-weight:700;color:var(--txt);margin-bottom:1.25rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.rel-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.25rem;transition:border-color .15s}
+.rel-card:hover{border-color:#93c5fd;text-decoration:none}
+.rel-tag{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--acc-d);background:rgba(37,99,235,.08);padding:.2rem .5rem;border-radius:9999px;display:inline-block;margin-bottom:.5rem}
+.rel-card h3{font-size:.875rem;font-weight:600;color:var(--txt);line-height:1.4}
+footer{border-top:1px solid var(--border);background:var(--bg);padding:2rem 1.5rem;text-align:center}
+footer p{font-size:.8125rem;color:var(--txt-3)}
+footer a{color:var(--txt-3)}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="/" style="display:inline-flex;align-items:center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="148" height="32"><rect x="0" y="2" width="44" height="44" rx="9" fill="#2563eb"/><path d="M14 38 L22 21 L16 21 L24 7" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><text x="54" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#0f1e2e">Spiff</text><text x="108" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#2563eb">RevOps</text></svg>
+    </a>
+    <nav><ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Call</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+<div class="art-hero">
+  <div class="art-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/resources/">Resources</a><span>›</span>
+      <span>Salesforce Spiff vs Spreadsheets</span>
+    </nav>
+    <span class="art-tag">Guide</span>
+    <h1>Salesforce Spiff vs Spreadsheets: When to Make the Switch</h1>
+    <p class="lead">Spreadsheets aren't the wrong answer at early stage — for a small team with a simple plan, they genuinely work. The question is when they stop working. This guide gives you honest thresholds: the team sizes, error rates, and operational signals that indicate a spreadsheet has become a liability rather than a tool.</p>
+    <div class="art-meta">
+      <a href="https://www.linkedin.com/in/ismadelgado/" target="_blank" rel="noopener">Isma Delgado</a>
+      <span>·</span>
+      <span>Salesforce Spiff Implementation Consultant</span>
+      <span>·</span>
+      <span>May 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="art-body">
+
+  <p>Most companies that come to me about implementing Salesforce Spiff have already waited too long. Not because spreadsheets are inherently bad — they aren't — but because the pain accumulated gradually and no one made a clear call about when the threshold had been crossed. They kept patching the spreadsheet: a new tab for the new plan type, a lookup table for the second currency, a separate sheet for manager overrides. Each patch made sense at the time. Together, they built something fragile and opaque.</p>
+
+  <p>Before arguing for Spiff, I want to make the case for spreadsheets first. Because if you're not past the threshold, the spreadsheet genuinely is the right answer — and implementing Spiff before you need it creates unnecessary complexity and cost.</p>
+
+  <h2>When Spreadsheets Are Still the Right Answer</h2>
+
+  <p>Spreadsheets work well for commission calculations when the following conditions are all true:</p>
+
+  <ul>
+    <li><strong>Your sales team is under 15 reps.</strong> Below this size, the volume of calculations is manageable, and the Finance or RevOps person running them can hold the logic in their head. Edge cases are rare enough to handle manually.</li>
+    <li><strong>You have one or two plan structures.</strong> One rate, maybe one accelerator above 100% quota, applied to everyone on the same role. If every AE is on the same plan, the spreadsheet logic needs to be written once and applied uniformly — that's genuinely straightforward.</li>
+    <li><strong>Month-end commission calculations take under 3–4 hours, start to finish.</strong> That includes pulling the data from your CRM, running the calculations, checking for errors, and sending statements out. If you're inside that window, the time cost is manageable.</li>
+    <li><strong>Finance is comfortable running the numbers manually and understands the model well enough to QA their own work.</strong> This matters. A spreadsheet is only as good as the person maintaining it.</li>
+    <li><strong>You're operating in a single currency.</strong> Multi-currency commission calculations in a spreadsheet are possible but introduce meaningful complexity — exchange rate timing, which rate to apply, how to handle corrections. Single currency removes this problem entirely.</li>
+    <li><strong>No significant headcount growth is imminent.</strong> If you're planning to go from 12 reps to 30 in the next 12 months, you're not really evaluating "should we switch now" — you're evaluating "how much pain do we want to absorb before we switch."</li>
+  </ul>
+
+  <div class="callout callout-green">
+    <p><strong>If all six of the above apply, keep the spreadsheet.</strong> The ROI on a Spiff implementation at this stage is weak — you'd be spending time and money on a migration that doesn't solve a problem you actually have. Come back to this decision when your situation changes.</p>
+  </div>
+
+  <h2>The Signs You've Outgrown Spreadsheets</h2>
+
+  <p>These aren't hypothetical risks — they're the concrete signals that the spreadsheet has become a source of operational drag, rep distrust, or financial exposure. The more of these that are true, the more clearly the math favours switching.</p>
+
+  <div class="sign-grid">
+    <div class="sign-card">
+      <h3>Month-end takes more than 8 hours</h3>
+      <p>Once your Finance or RevOps person is spending a full working day on commission calculations — including corrections and rep queries — the time cost alone starts to justify automation.</p>
+    </div>
+    <div class="sign-card">
+      <h3>You've had at least one significant error</h3>
+      <p>An underpay a rep noticed. An overpay you had to recover. Even one incident of this type signals that manual calculation risk has materialised — and it will happen again as the team grows.</p>
+    </div>
+    <div class="sign-card">
+      <h3>Three or more distinct plan types</h3>
+      <p>AEs, SDRs, CSMs, expansion reps, and manager overrides all on different structures. Each adds a separate sheet or logic branch. Maintaining consistency across all of them manually is where errors compound.</p>
+    </div>
+    <div class="sign-card">
+      <h3>Reps ask "how was this calculated?"</h3>
+      <p>In a spreadsheet, the honest answer is often "let me show you the formula in column F." You can't give reps view access without also risking edit access. Transparency is structurally limited.</p>
+    </div>
+    <div class="sign-card">
+      <h3>Onboarding 5+ new reps per quarter</h3>
+      <p>Each new rep needs to be added to the spreadsheet and someone needs to explain how to read their statement. At this onboarding rate, the admin overhead becomes a recurring cost every quarter.</p>
+    </div>
+    <div class="sign-card">
+      <h3>Multi-currency is in play</h3>
+      <p>The moment you have reps paid in GBP, EUR, and USD, your spreadsheet needs exchange rate logic, rate-date sourcing, and consistent rounding rules. This is solvable — but it's the point where spreadsheet complexity starts to outpace its manageability.</p>
+    </div>
+    <div class="sign-card">
+      <h3>A funding event or new CFO is coming</h3>
+      <p>Investors and incoming finance leadership will ask about your commission system. "We do it in Google Sheets" is a yellow flag at Series B and beyond. It signals a gap in financial controls that will need to be addressed.</p>
+    </div>
+    <div class="sign-card">
+      <h3>Any dispute took more than 2 hours to resolve</h3>
+      <p>In a properly configured automation tool, a dispute is resolved by pulling up the statement, showing the deal, the rate applied, and the calculation. If resolving a dispute requires you to go back through the spreadsheet history and reconstruct a calculation, that's an auditability failure.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <p><strong>The typical tipping point</strong> in my experience is around 25–35 reps with 3+ plan types. Below 20 reps, the signs above are often not yet severe enough to justify the switch. Above 40 reps, staying on a spreadsheet is almost always costing more than the migration would cost.</p>
+  </div>
+
+  <h2>The Hidden Cost of Staying on Spreadsheets Too Long</h2>
+
+  <p>The case for switching is often made on principle — "manual processes don't scale" — without anyone doing the actual maths. So let's do it.</p>
+
+  <h3>Finance time</h3>
+  <p>At a 40-rep company with 3 plan types and one currency, a reasonable estimate for month-end commission processing looks like this: 2–3 hours pulling data and running the initial calculation, 1–2 hours QA, 1–2 hours fielding rep queries on statements, and 1–3 hours correcting any errors found. That's 5–10 hours in a clean month. Add one material error or a new rep who disputes their first statement, and you're at 12–20 hours. Across 12 months, that's 60–240 hours of Finance time per year — time that could be spent on actual financial analysis.</p>
+
+  <h3>Error cost</h3>
+  <p>Manual spreadsheet error rates in commission calculations are consistently cited at 1–3% of total commission paid. This isn't a theoretical risk — it's what happens when humans manually manipulate data at volume. At a £500,000 annual commission run rate, a 1–3% error rate means £5,000–£15,000 per year in incorrect payments. Overpays you may never recover (recovery from reps is operationally painful and damages morale). Underpays that a rep notices — which erodes trust immediately, even if corrected promptly.</p>
+
+  <div class="cost-box">
+    <div class="cost-label">Illustrative calculation</div>
+    <h3>Error cost at £500k commission run rate</h3>
+    <p>Assumption: 2% error rate on manual commission spreadsheets.</p>
+    <div class="calc">
+      £500,000 annual commissions × 2% = <strong>£10,000/year in errors</strong><br>
+      Of which ~60% overpays (at risk of non-recovery): <strong>£6,000</strong><br>
+      Of which ~40% underpays (rep trust damage): <strong>£4,000</strong><br><br>
+      Plus Finance time cost: 120 hours/year × £60/hr loaded cost = <strong>£7,200/year</strong><br><br>
+      Indicative total annual cost of spreadsheet: <strong>£17,200+</strong>
+    </div>
+    <p style="margin-top:.75rem">A Spiff implementation at this company size typically costs £8,000–£15,000 all in. It pays back within the first year.</p>
+  </div>
+
+  <h3>Rep trust</h3>
+  <p>Transparency is structurally limited in a spreadsheet. You can't give a rep a clean, self-service view of how their commission was calculated without also giving them access to the file — which means access to everyone else's data, and risk of accidental edits. The result is that reps have to take your word for it. At small scale this is fine. At 30+ reps it becomes a recurring source of questions, and at 50+ reps it's a meaningful HR and retention issue. Reps who don't trust their commission statements look for other jobs.</p>
+
+  <h3>Auditability</h3>
+  <p>"How was this commission calculated in Q2 last year?" In a spreadsheet, answering this requires version control discipline that most teams don't have — or a manual audit through email chains and file history. In a purpose-built commission tool, the answer is three clicks. This becomes relevant whenever there's a rep departure, a dispute that escalates, or a finance audit.</p>
+
+  <h3>Scaling complexity</h3>
+  <p>Spreadsheet complexity doesn't scale linearly with team size. Adding rep number 10 to a 9-rep spreadsheet is trivial. Adding rep number 40 to a 39-rep spreadsheet that has 8 plan variants, manager overrides, multi-currency logic, and clawback tracking is a materially different task. The complexity compounds because each new variable interacts with all existing variables. This is the core structural problem that commission automation solves.</p>
+
+  <h2>What the Switch from Spreadsheets to Salesforce Spiff Actually Involves</h2>
+
+  <p>One of the reasons companies stay on spreadsheets longer than they should is that the migration feels daunting. It's not — but it does need to be done in the right order.</p>
+
+  <ol class="steps-list">
+    <li>
+      <div class="step-body">
+        <div class="step-title">Map your spreadsheet logic to Spiff's plan structure</div>
+        <div class="step-desc">This is the most important step and where most DIY migrations go wrong. Before touching Spiff's UI, document every rule in your current spreadsheet: the rate, any accelerators, the quota structure, how draws work, what happens with mid-quarter quota changes, clawback rules. Do this in plain language first. Ambiguities in the spreadsheet will become bugs in Spiff if you don't surface them now.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <div class="step-title">Identify which Salesforce fields will drive each calculation</div>
+        <div class="step-desc">Spiff pulls data from Salesforce objects — typically Opportunity, with custom fields for things like deal type, product line, or territory. You need to confirm that every input to your commission calculations exists as a clean, reliable Salesforce field. If commissions are currently calculated from a data source outside Salesforce, that integration needs to be resolved before Spiff goes live.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <div class="step-title">Build and test against 2–3 months of historical data</div>
+        <div class="step-desc">Once the plans are built in Spiff, run historical deal data through them and compare the Spiff output to what was actually paid from the spreadsheet. They should match within rounding tolerance. If they don't, you have a configuration error to find and fix before go-live. This step is not optional — it is the only way to validate that your Spiff configuration correctly implements your comp policy.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <div class="step-title">Run Spiff in parallel for one full cycle</div>
+        <div class="step-desc">In the first live month, run both the spreadsheet and Spiff simultaneously and pay based on the spreadsheet. Compare outputs at month-end. Any discrepancies you find here are much cheaper to fix than discrepancies that become rep disputes after you've paid from Spiff. See the section below on why this step is non-negotiable.</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-body">
+        <div class="step-title">Onboard reps and retire the spreadsheet</div>
+        <div class="step-desc">Show reps where to find their Spiff statement, how to read the deal-level breakdown, and how to raise a dispute if something looks wrong. This takes 20–30 minutes per rep in a group session. Once reps are onboarded and the parallel run has passed clean, the spreadsheet goes away.</div>
+      </div>
+    </li>
+  </ol>
+
+  <h2>The Parallel Run Is Not Optional</h2>
+
+  <p>I want to be direct about this, because it's the step that implementation projects most often want to skip in the name of speed.</p>
+
+  <p>The parallel run — running Spiff and the spreadsheet side-by-side for the first live month, then comparing outputs before paying anyone — adds roughly one week of work to the project. It requires someone to reconcile two sets of numbers and investigate any gaps. It feels like double work. Teams under pressure to go live fast push back on it.</p>
+
+  <p>Here's why it's not optional: the risk you're mitigating is not a configuration bug that's obvious. If your Spiff plans had an obvious bug, you'd have caught it in the historical testing phase. The parallel run catches subtle discrepancies — a deal that gets pulled twice because of a duplicate Salesforce field, an accelerator that triggers one month earlier than intended because of how Spiff counts the period, a quota adjustment that was applied in the spreadsheet but wasn't reflected in Spiff's quota import.</p>
+
+  <p>These errors are small in isolation but material in aggregate. More importantly, they're errors that will become rep disputes — "my statement shows X but I expected Y" — and rep disputes, once they start, are very hard to shut down. A rep who has one bad month-end experience with a new system will distrust it for months afterwards. The parallel run adds a week. Trust repair after a disputed first statement can take six months.</p>
+
+  <div class="callout callout-danger">
+    <p><strong>The one exception:</strong> if historical testing has been done rigorously — at least two full months of real data run through the new configuration with a line-by-line comparison to actuals — you can sometimes shorten or compress the parallel run. But you cannot eliminate it entirely on the first live cycle.</p>
+  </div>
+
+  <h2>Decision Table: Stay on Spreadsheets or Switch to Spiff?</h2>
+
+  <p>Use the table below as a quick-reference summary. No single factor is decisive — look at the pattern across multiple rows.</p>
+
+  <table class="decision-table">
+    <thead>
+      <tr>
+        <th>Factor</th>
+        <th class="stay">Stay on spreadsheets</th>
+        <th class="switch">Switch to Salesforce Spiff</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Team size</td>
+        <td class="stay-cell">Under 15 reps</td>
+        <td class="switch-cell">25+ reps, or growing fast toward it</td>
+      </tr>
+      <tr>
+        <td>Plan complexity</td>
+        <td class="stay-cell">1–2 plan types, single rate structure</td>
+        <td class="switch-cell">3+ plan types, or accelerators across multiple roles</td>
+      </tr>
+      <tr>
+        <td>Month-end time cost</td>
+        <td class="stay-cell">Under 4 hours, start to finish</td>
+        <td class="switch-cell">8+ hours, or growing month-over-month</td>
+      </tr>
+      <tr>
+        <td>Currency</td>
+        <td class="stay-cell">Single currency</td>
+        <td class="switch-cell">2+ currencies, or FX in the commission calc</td>
+      </tr>
+      <tr>
+        <td>Error history</td>
+        <td class="stay-cell">No material errors in past 12 months</td>
+        <td class="switch-cell">At least one underpay or overpay that a rep noticed</td>
+      </tr>
+      <tr>
+        <td>Rep transparency</td>
+        <td class="stay-cell">Reps rarely ask about calculations</td>
+        <td class="switch-cell">Regular rep queries, or disputes taking 2+ hours to resolve</td>
+      </tr>
+      <tr>
+        <td>Hiring pace</td>
+        <td class="stay-cell">Stable headcount, no planned growth</td>
+        <td class="switch-cell">5+ new reps per quarter expected</td>
+      </tr>
+      <tr>
+        <td>Finance audit readiness</td>
+        <td class="stay-cell">No investor scrutiny of finance processes</td>
+        <td class="switch-cell">Series B or later, or new CFO coming in</td>
+      </tr>
+      <tr>
+        <td>Clawbacks</td>
+        <td class="stay-cell">None, or very rare</td>
+        <td class="switch-cell">Regular clawback events requiring retroactive recalculation</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-info">
+    <p><strong>A note on middle ground:</strong> if you score roughly half "stay" and half "switch," you're probably 6–12 months away from the decision being obvious. The right move is to document your current spreadsheet logic thoroughly <em>now</em> — while whoever built it still works at the company — so that when you do switch, the migration has a clean foundation to work from.</p>
+  </div>
+
+  <h2>One More Thing: When Not to Implement Spiff</h2>
+
+  <p>Spiff is the right tool for running recurring commission calculations on a sales team operating out of Salesforce. It is not the right tool if:</p>
+
+  <ul>
+    <li>Your commission calculations happen primarily outside Salesforce and there's no near-term plan to change that. Spiff works best when Salesforce is the system of record for sales data. If deals live in HubSpot, a custom ERP, or a manual spreadsheet, Spiff will require significant integration work to deliver its value.</li>
+    <li>Your commission structure changes so frequently that any configured plan will be out of date within 30 days. Spiff reduces the cost of plan changes significantly compared to a spreadsheet, but it doesn't eliminate it. If your comp policy is genuinely in flux, stabilise the policy before implementing the system.</li>
+    <li>You're pre-product or pre-revenue. At this stage, commission structures are hypothetical and teams are tiny. There is no version of this where Spiff is the right investment right now.</li>
+  </ul>
+
+  <div class="related">
+    <h2>Related resources</h2>
+    <div class="related-grid">
+      <a href="/resources/spiff-implementation-checklist/" class="rel-card" style="text-decoration:none;color:inherit">
+        <span class="rel-tag">Guide</span>
+        <h3>Salesforce Spiff Implementation Checklist</h3>
+      </a>
+      <a href="/resources/why-reps-dont-trust-commission-statements/" class="rel-card" style="text-decoration:none;color:inherit">
+        <span class="rel-tag">Analysis</span>
+        <h3>Why Reps Don't Trust Their Commission Statements</h3>
+      </a>
+      <a href="/resources/multi-currency-commission-plans-spiff/" class="rel-card" style="text-decoration:none;color:inherit">
+        <span class="rel-tag">Guide</span>
+        <h3>Multi-Currency Commission Plans in Salesforce Spiff</h3>
+      </a>
+      <a href="/resources/accelerators-tiers-spiff/" class="rel-card" style="text-decoration:none;color:inherit">
+        <span class="rel-tag">Guide</span>
+        <h3>Accelerators and Tiers in Salesforce Spiff: How to Build Them Correctly</h3>
+      </a>
+    </div>
+  </div>
+
+  <div class="art-cta">
+    <h2>Thinking about making the switch?</h2>
+    <p>Let's look at your current setup and see if Spiff is the right move — including whether the timing and ROI actually make sense for where you are now.</p>
+    <a href="/#contact">Book a Free Discovery Call</a>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <p>© <span id="yr"></span> SpiffRevOps · <a href="/">Home</a> · <a href="/resources/">Resources</a> · <a href="mailto:isma@spiffrevops.com">isma@spiffrevops.com</a> · <a href="/#contact">Contact</a> · Independent consultancy, not affiliated with Spiff Inc. or Salesforce.</p>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
