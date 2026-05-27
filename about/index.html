@@ -139,6 +139,16 @@ main{padding-top:4rem}
 .tl-company{font-size:.8125rem;font-weight:500;color:var(--txt-3);margin-bottom:.625rem}
 .tl-desc{font-size:.875rem;color:var(--txt-2);line-height:1.7;margin:0}
 
+/* FINANCE BACKGROUND GROUP */
+.fin-group{margin-top:2rem}
+.fin-group-label{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--txt-3);margin-bottom:.875rem;display:flex;align-items:center;gap:.75rem}
+.fin-group-label::before,.fin-group-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.fin-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:.875rem}
+.fin-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.625rem;padding:1rem}
+.fin-card-co{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--acc);margin-bottom:.25rem}
+.fin-card-role{font-size:.8125rem;font-weight:600;color:var(--txt);line-height:1.35;margin-bottom:.5rem}
+.fin-card-desc{font-size:.8125rem;color:var(--txt-2);line-height:1.65;margin:0}
+
 /* THREE LENSES */
 .lens-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin:1.75rem 0}
 .lens-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.5rem;border-top:3px solid var(--acc)}
@@ -252,33 +262,9 @@ footer a{color:var(--txt-3)}
 
     <section class="body-section">
       <h2>The career behind the consultancy</h2>
-      <p>I started in finance, not RevOps. Over 12 years I worked as a financial analyst and FP&A manager across three very different industries before moving into Revenue Operations.</p>
+      <p>I started in finance, not RevOps. Over 12 years I worked across three companies with very different GTM models — and very different commission structures — before moving into Revenue Operations.</p>
 
       <div class="timeline">
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">2016 – 2019</div>
-          <div class="tl-role">Financial Reporting Analyst, EMEA</div>
-          <div class="tl-company">Thermo Fisher Scientific &middot; Biotech</div>
-          <p class="tl-desc">Built the foundations of financial reporting, data modelling, and operating inside complex multi-entity corporate structures at one of the world's largest biotech companies.</p>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">2019 – 2022</div>
-          <div class="tl-role">Senior Financial Analyst → Acting FP&A Manager, Global</div>
-          <div class="tl-company">American Express Global Business Travel &middot; Travel Tech</div>
-          <p class="tl-desc">Progressed to Acting FP&A Manager — planning and forecasting divisional revenues for a global division, working across business units, currencies, and senior Finance leadership at one of the world's most recognised financial services brands.</p>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-period">2022 – 2024</div>
-          <div class="tl-role">Senior Finance Analyst, EMEA GTM/Sales</div>
-          <div class="tl-company">Databricks &middot; SaaS</div>
-          <p class="tl-desc">Joined as the first FP&A Analyst in EMEA, building Finance support for the sales and GTM motion in a hyper-growth SaaS environment and working directly alongside commercial teams.</p>
-        </div>
 
         <div class="tl-item">
           <div class="tl-dot"></div>
@@ -288,6 +274,27 @@ footer a{color:var(--txt-3)}
           <p class="tl-desc">Led the end-to-end Salesforce Spiff implementation from scratch — 10 commission plans with tiered accelerators and clawback logic, 8 currencies, 100+ reps onboarded. Live in 4 weeks.</p>
         </div>
 
+      </div>
+
+      <div class="fin-group">
+        <div class="fin-group-label">Finance background · 2016 – 2024</div>
+        <div class="fin-cards">
+          <div class="fin-card">
+            <div class="fin-card-co">Databricks · 2022–2024</div>
+            <div class="fin-card-role">Senior Finance Analyst, EMEA GTM/Sales</div>
+            <p class="fin-card-desc">Consumption-based GTM. Commission plans tied to usage targets and consumption metrics — not just closed-won ARR. First FP&A hire in the EMEA region.</p>
+          </div>
+          <div class="fin-card">
+            <div class="fin-card-co">American Express GBT · 2019–2022</div>
+            <div class="fin-card-role">Acting FP&A Manager, Global</div>
+            <p class="fin-card-desc">Transaction-based GTM. Commissions calculated on booking volumes and transaction values across a high-frequency global travel business. Multi-currency at scale.</p>
+          </div>
+          <div class="fin-card">
+            <div class="fin-card-co">Thermo Fisher Scientific · 2016–2019</div>
+            <div class="fin-card-role">Financial Reporting Analyst, EMEA</div>
+            <p class="fin-card-desc">Large corporate finance. Multi-entity structures, data integrity, and the reporting discipline that underpins every commission audit.</p>
+          </div>
+        </div>
       </div>
 
       <div style="background:rgba(37,99,235,.05);border:1px solid rgba(37,99,235,.2);border-radius:.75rem;padding:1.25rem 1.5rem;margin-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
