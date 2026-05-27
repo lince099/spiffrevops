@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce Spiff vs CaptivateIQ vs Everstage: Which ICM Platform Is Right for You? | SpiffRevOps</title>
+<meta name="description" content="An honest comparison of Salesforce Spiff, CaptivateIQ, and Everstage for B2B SaaS companies — covering Salesforce integration, plan complexity, rep UX, and when each platform actually wins. By Isma Delgado.">
+<meta name="keywords" content="Salesforce Spiff vs CaptivateIQ, Salesforce Spiff vs Everstage, ICM platform comparison, incentive compensation management software, commission automation comparison, CaptivateIQ vs Everstage, best commission software B2B SaaS">
+<link rel="canonical" href="https://spiffrevops.com/resources/spiff-vs-captivateiq-everstage/">
+<meta property="og:title" content="Salesforce Spiff vs CaptivateIQ vs Everstage: Which ICM Platform Is Right for You?">
+<meta property="og:description" content="An honest comparison of the three most common ICM platforms for B2B SaaS — when each one wins, and when you should think twice.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://spiffrevops.com/resources/spiff-vs-captivateiq-everstage/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"Article","headline":"Salesforce Spiff vs CaptivateIQ vs Everstage: Which ICM Platform Is Right for You?","description":"An honest comparison of Salesforce Spiff, CaptivateIQ, and Everstage for B2B SaaS companies — covering Salesforce integration, plan complexity, rep UX, and when each platform actually wins.","datePublished":"2026-05-27","author":{"@type":"Person","name":"Isma Delgado","url":"https://spiffrevops.com/about/","jobTitle":"Salesforce Spiff Implementation Consultant"},"publisher":{"@type":"Organization","name":"SpiffRevOps","url":"https://spiffrevops.com"},"mainEntityOfPage":"https://spiffrevops.com/resources/spiff-vs-captivateiq-everstage/" }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spiffrevops.com"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://spiffrevops.com/resources/"},{"@type":"ListItem","position":3,"name":"Salesforce Spiff vs CaptivateIQ vs Everstage","item":"https://spiffrevops.com/resources/spiff-vs-captivateiq-everstage/"}] }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f0f4f8;--bg-alt:#e4eaf2;--bg-card:#ffffff;--border:#c8d4e0;--border-strong:#a8bace;--txt:#0f1e2e;--txt-2:#3a5068;--txt-3:#6b87a0;--acc:#2563eb;--acc-d:#1d4ed8;--acc-l:#3b82f6}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Sora',sans-serif}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid var(--border);background:rgba(240,244,248,.92);backdrop-filter:blur(8px)}
+.nav-inner{max-width:72rem;margin:0 auto;padding:0 1.5rem;height:4rem;display:flex;align-items:center;justify-content:space-between}
+.nav-links{display:flex;align-items:center;gap:1.5rem;list-style:none}
+.nav-links a{font-size:.875rem;color:var(--txt-2)}
+.nav-links a:hover{color:var(--txt);text-decoration:none}
+.nav-cta{padding:.5rem 1rem;background:var(--acc-d);color:#fff!important;font-size:.875rem;font-weight:600;border-radius:.5rem}
+.nav-cta:hover{background:var(--acc-l)!important;text-decoration:none!important}
+main{padding-top:4rem}
+.art-hero{background:var(--bg-card);border-bottom:1px solid var(--border);padding:3.5rem 1.5rem 2.5rem}
+.art-inner{max-width:48rem;margin:0 auto}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:var(--txt-3);margin-bottom:1.25rem;flex-wrap:wrap}
+.breadcrumb a{color:var(--txt-3)}
+.breadcrumb a:hover{color:var(--txt-2);text-decoration:none}
+.breadcrumb span{opacity:.5}
+.art-tag{display:inline-block;padding:.25rem .75rem;font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;border-radius:9999px;background:rgba(37,99,235,.08);color:var(--acc-d);margin-bottom:1rem}
+.art-hero h1{font-size:clamp(1.75rem,4vw,2.375rem);font-weight:800;letter-spacing:-.025em;line-height:1.15;color:var(--txt);margin-bottom:1rem}
+.art-hero .lead{font-size:1rem;color:var(--txt-2);line-height:1.75;margin-bottom:1.5rem}
+.art-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.8125rem;color:var(--txt-3);padding-top:1.25rem;border-top:1px solid var(--border)}
+.art-meta a{color:var(--txt-3);font-weight:600}
+.art-meta a:hover{color:var(--acc);text-decoration:none}
+.art-body{max-width:48rem;margin:0 auto;padding:3rem 1.5rem}
+.art-body h2{font-size:1.375rem;font-weight:700;color:var(--txt);margin:2.5rem 0 1rem;padding-bottom:.625rem;border-bottom:2px solid var(--border)}
+.art-body h3{font-size:1.0625rem;font-weight:600;color:var(--txt);margin:1.75rem 0 .625rem}
+.art-body p{color:var(--txt-2);font-size:.9375rem;line-height:1.8;margin-bottom:1rem}
+.art-body ul,.art-body ol{color:var(--txt-2);font-size:.9375rem;line-height:1.8;margin:1rem 0 1rem 1.5rem}
+.art-body li{margin-bottom:.5rem}
+.art-body strong{color:var(--txt);font-weight:600}
+.art-body a{color:var(--acc)}
+.callout{border-radius:.75rem;padding:1.25rem 1.5rem;margin:1.5rem 0}
+.callout-warn{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.25);border-left:3px solid #f59e0b}
+.callout-info{background:rgba(37,99,235,.05);border:1px solid rgba(37,99,235,.2);border-left:3px solid var(--acc)}
+.callout p{font-size:.875rem;color:var(--txt-2);line-height:1.7;margin:0}
+.callout p+p{margin-top:.625rem}
+.callout strong{color:var(--txt)}
+.platform-grid{display:flex;flex-direction:column;gap:1.5rem;margin:1.5rem 0}
+.platform-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.5rem;border-left:4px solid var(--acc)}
+.platform-card h3{font-family:'Sora',sans-serif;font-size:1.0625rem;font-weight:700;color:var(--txt);margin-bottom:.75rem}
+.platform-card p{font-size:.875rem;color:var(--txt-2);line-height:1.7;margin-bottom:.625rem}
+.platform-card p:last-child{margin-bottom:0}
+.platform-card .best-for{font-size:.8125rem;font-weight:600;color:var(--acc-d);margin-top:.875rem;padding-top:.75rem;border-top:1px solid var(--border)}
+.compare-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.8125rem;border:1px solid var(--border);border-radius:.75rem;overflow:hidden}
+.compare-table thead th{background:var(--acc-d);color:#fff;font-family:'Sora',sans-serif;font-weight:700;padding:.75rem 1rem;text-align:left}
+.compare-table thead th:first-child{width:30%}
+.compare-table tbody tr:nth-child(even) td{background:var(--bg-alt)}
+.compare-table tbody tr:nth-child(odd) td{background:var(--bg-card)}
+.compare-table td{padding:.75rem 1rem;border-top:1px solid var(--border);color:var(--txt-2);vertical-align:top;line-height:1.55}
+.compare-table td:first-child{font-weight:600;color:var(--txt);background:var(--bg-alt)!important}
+.compare-table tbody tr:nth-child(even) td:first-child{background:var(--bg)!important}
+.verdict{background:rgba(37,99,235,.05);border:1px solid rgba(37,99,235,.2);border-radius:.75rem;padding:1.25rem 1.5rem;margin:.875rem 0}
+.verdict-label{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--acc-d);margin-bottom:.375rem}
+.verdict p{font-size:.875rem;color:var(--txt-2);line-height:1.7;margin:0}
+.decision-grid{display:flex;flex-direction:column;gap:1.25rem;margin:1.5rem 0}
+.decision-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.375rem 1.5rem}
+.decision-card .pick{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.pick-spiff{color:#1d4ed8}
+.pick-captivate{color:#7c3aed}
+.pick-everstage{color:#059669}
+.decision-card h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;color:var(--txt);margin-bottom:.625rem}
+.decision-card p{font-size:.875rem;color:var(--txt-2);line-height:1.7;margin-bottom:.5rem}
+.decision-card p:last-child{margin-bottom:0}
+.decision-card ul{font-size:.875rem;color:var(--txt-2);line-height:1.7;margin:.5rem 0 .5rem 1.25rem}
+.decision-card ul li{margin-bottom:.25rem}
+.art-cta{background:var(--acc-d);border-radius:1rem;padding:2.5rem;text-align:center;margin-top:3rem}
+.art-cta h2{color:#fff;font-size:1.375rem;margin-bottom:.625rem}
+.art-cta p{color:rgba(255,255,255,.75);font-size:.9rem;margin-bottom:1.25rem}
+.art-cta a{display:inline-block;padding:.75rem 1.75rem;background:#fff;color:var(--acc-d);font-weight:700;border-radius:.75rem;font-size:.9rem}
+.art-cta a:hover{text-decoration:none;background:rgba(255,255,255,.9)}
+.related{margin-top:3rem;padding-top:2rem;border-top:2px solid var(--border)}
+.related h2{font-size:1.125rem;font-weight:700;color:var(--txt);margin-bottom:1.25rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.rel-card{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.25rem;transition:border-color .15s}
+.rel-card:hover{border-color:#93c5fd;text-decoration:none}
+.rel-tag{font-size:.6875rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--acc-d);background:rgba(37,99,235,.08);padding:.2rem .5rem;border-radius:9999px;display:inline-block;margin-bottom:.5rem}
+.rel-card h3{font-size:.875rem;font-weight:600;color:var(--txt);line-height:1.4}
+footer{border-top:1px solid var(--border);background:var(--bg);padding:2rem 1.5rem;text-align:center}
+footer p{font-size:.8125rem;color:var(--txt-3)}
+footer a{color:var(--txt-3)}
+@media(max-width:700px){.compare-table{font-size:.75rem}.compare-table thead th,.compare-table td{padding:.6rem .625rem}}
+@media(max-width:520px){.compare-table thead th:nth-child(3),.compare-table td:nth-child(3){display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="/" style="display:inline-flex;align-items:center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="148" height="32"><rect x="0" y="2" width="44" height="44" rx="9" fill="#2563eb"/><path d="M14 38 L22 21 L16 21 L24 7" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><text x="54" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#0f1e2e">Spiff</text><text x="108" y="33" font-family="'Sora',sans-serif" font-weight="800" font-size="22" letter-spacing="-0.03em" fill="#2563eb">RevOps</text></svg>
+    </a>
+    <nav><ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="/#contact" class="nav-cta">Book a Call</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+
+<div class="art-hero">
+  <div class="art-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/resources/">Resources</a><span>›</span>
+      <span>Spiff vs CaptivateIQ vs Everstage</span>
+    </nav>
+    <span class="art-tag">Comparison</span>
+    <h1>Salesforce Spiff vs CaptivateIQ vs Everstage: Which ICM Platform Is Right for You?</h1>
+    <p class="lead">Most ICM platform comparisons read like vendor marketing in disguise. This one doesn't. I've worked inside Salesforce Spiff implementations at scale — including a full rebuild at Storyblok covering 100+ reps, 10 commission plans, and 8 currencies — and I've seen companies waste months on the wrong tool. Here's how to choose correctly the first time.</p>
+    <div class="art-meta">
+      <a href="https://www.linkedin.com/in/ismadelgado/" target="_blank" rel="noopener">Isma Delgado</a>
+      <span>·</span>
+      <span>Salesforce Spiff Implementation Consultant</span>
+      <span>·</span>
+      <span>May 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="art-body">
+
+  <h2>Why This Decision Matters More Than People Think</h2>
+
+  <p>Switching ICM platforms is expensive and disruptive in ways that aren't obvious until you're in the middle of it. You're not just migrating data — you're rebuilding every commission plan from scratch in a new data model, re-training your Finance team and your reps, and re-establishing trust in a system that may have already been fragile. Most companies I've seen switch platforms do it once, not twice. Getting it wrong costs a year.</p>
+
+  <p>The problem with most comparisons is they evaluate platforms on feature lists. Feature lists are almost useless for this decision. Every platform in this category can handle accelerators, tiers, clawbacks, and multi-currency. The real question is: <strong>given how your business actually runs, which platform fits your specific data model and plan logic without needing constant workarounds?</strong></p>
+
+  <p>The three platforms that come up most often in B2B SaaS mid-market evaluations are Salesforce Spiff, CaptivateIQ, and Everstage. They're genuinely different products with different design philosophies. Here's what that means in practice.</p>
+
+  <h2>Platform Overviews</h2>
+
+  <div class="platform-grid">
+
+    <div class="platform-card">
+      <h3>Salesforce Spiff</h3>
+      <p>Spiff was founded in 2017 and acquired by Salesforce in early 2023 — which tells you something about who it's built for. The core design principle is tight, bidirectional integration with the Salesforce CRM data model. Commission plans in Spiff are built on top of Salesforce objects: Opportunities, Products, custom objects, whatever's in your org. There's no ETL layer, no scheduled sync that might lag — when a deal closes in Salesforce, Spiff sees it effectively in real time.</p>
+      <p>This architecture makes it particularly well-suited to the standard B2B SaaS commission model: ARR or TCV-based plans, quota attainment with accelerators above 100%, possible SPIFFs for strategic products or multi-year deals, and maybe a handful of role-specific variations (AE vs. SDR vs. CSM). These patterns are well-worn in Spiff and configure cleanly. The rep-facing statement experience is solid — reps can drill into any deal, see which plan it was evaluated against, and trace the calculation.</p>
+      <p>The Salesforce acquisition has deepened the product's native capabilities (Einstein-based forecasting integration, tighter Salesforce Flow hooks) while also, fairly, raising questions about long-term pricing trajectory as it gets folded into larger Salesforce bundles.</p>
+      <p class="best-for">Best for: Salesforce CRM customers with standard SaaS commission structures, 20–500 reps. The default choice for most B2B SaaS mid-market companies on Salesforce.</p>
+    </div>
+
+    <div class="platform-card">
+      <h3>CaptivateIQ</h3>
+      <p>CaptivateIQ's design philosophy is fundamentally different from Spiff's. Rather than a structured plan-builder that maps to a predefined data model, CaptivateIQ gives you a spreadsheet-like formula interface — Excel-style logic you can apply to any data you pipe in. This is genuinely powerful when your commission plans don't fit standard patterns: channel partner arrangements with complex splits, non-standard draw structures, plans that depend on fields that don't exist as standard Salesforce objects, or deeply custom calculation logic that your Finance team has been running in Excel for years.</p>
+      <p>The formula builder is the product's main strength and its main risk. Finance teams who are comfortable in Excel tend to love it — the mental model transfers. But "can do anything" also means "can be misconfigured in ways that are hard to audit." I've spoken with companies running CaptivateIQ implementations where the plan logic became so layered with formula patches that no one could confidently explain what a given calculation was doing. That's not a platform failure exactly, but it's a real risk if you don't have disciplined version control over your formulas.</p>
+      <p>CaptivateIQ is CRM-agnostic, which matters if you're on HubSpot, Dynamics, or a custom data warehouse — it can ingest from wherever your data lives. The trade-off is that this flexibility requires more setup work and a more technically capable admin to maintain ongoing.</p>
+      <p class="best-for">Best for: Companies with genuinely non-standard plan logic that doesn't fit Spiff's data model, teams with mixed CRM environments, or Finance-led organisations where formula-based configuration feels natural.</p>
+    </div>
+
+    <div class="platform-card">
+      <h3>Everstage</h3>
+      <p>Everstage was founded in 2021 — considerably newer than the other two — and it shows in the product priorities. Where Spiff optimises for Salesforce data fidelity and CaptivateIQ optimises for configuration flexibility, Everstage optimises for the rep experience. The mobile app is genuinely good. The statement UI is clean and consumer-grade. There's a gamification layer — leaderboards, real-time commission tracking, earnings projections — that's designed to keep reps engaged with their numbers between pay cycles.</p>
+      <p>For a company where rep adoption and commission visibility are the primary pain points — reps don't know what they've earned, disputes are high, morale around comp is low — Everstage solves that problem well. The plan configuration side is capable for most standard structures, and it integrates with Salesforce reasonably well, though the integration is not as native as Spiff's given that Spiff is literally a Salesforce product.</p>
+      <p>The honest caveat: Everstage is a newer platform, which means the configuration depth for very complex plans (intricate multi-variable accelerators, unusual clawback logic, large numbers of distinct plan types) is less battle-tested than Spiff or CaptivateIQ. It's also grown primarily in the sub-200-rep segment. If you're a 300+ rep organisation with 15 distinct plan types, Everstage may be capable but you're further from the product's optimised use case.</p>
+      <p class="best-for">Best for: Smaller and mid-size teams (20–80 reps) where rep engagement and commission visibility are the primary driver, and plan complexity is moderate.</p>
+    </div>
+
+  </div>
+
+  <h2>Head-to-Head Comparison</h2>
+
+  <p>The dimensions that actually determine which platform wins for a given company:</p>
+
+  <div style="overflow-x:auto;margin:1.5rem 0">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Salesforce Spiff</th>
+          <th>CaptivateIQ</th>
+          <th>Everstage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Salesforce CRM integration</td>
+          <td><strong>Native.</strong> Built as a Salesforce product. Plans run directly against Salesforce objects. Real-time sync, no ETL.</td>
+          <td>Connector-based. Works, but adds a data pipeline layer you need to configure and maintain.</td>
+          <td>Integration available. Functional but not as deep as Spiff's native architecture.</td>
+        </tr>
+        <tr>
+          <td>Standard SaaS plan logic</td>
+          <td><strong>Excellent.</strong> ARR/TCV, quota attainment with accelerators, product-level SPIFFs, role splits — all handled cleanly out of the box.</td>
+          <td>Good. Works well, but the formula approach can be overkill for simple plans and requires more maintenance overhead.</td>
+          <td>Good for standard plans. Capable for most typical structures.</td>
+        </tr>
+        <tr>
+          <td>Non-standard / unusual plan logic</td>
+          <td>Handles most B2B SaaS complexity well. Can struggle with very unusual structures that don't map to Salesforce objects cleanly.</td>
+          <td><strong>Strongest here.</strong> The formula-builder approach can accommodate almost any logic if you're willing to build it.</td>
+          <td>Less suitable for genuinely complex or non-standard structures.</td>
+        </tr>
+        <tr>
+          <td>Rep-facing UX</td>
+          <td>Solid. Statement drill-down is clear and auditable. Not flashy but functional and trusted.</td>
+          <td>Functional. Rep statements exist and are configurable but not the product's primary focus.</td>
+          <td><strong>Best in class here.</strong> Mobile-first, real-time earnings tracker, gamification. Designed around rep engagement.</td>
+        </tr>
+        <tr>
+          <td>Finance / admin UX</td>
+          <td>Good. Plan builder is structured and approachable. Requires understanding Salesforce data model.</td>
+          <td><strong>Strong for Excel-native Finance teams.</strong> Formula logic feels familiar. Can become complex to maintain at scale.</td>
+          <td>Good for standard configurations. Less suited for highly complex multi-plan admin.</td>
+        </tr>
+        <tr>
+          <td>Mid-market fit (50–300 reps)</td>
+          <td><strong>Core target.</strong> Well-documented at 50–500 rep scale.</td>
+          <td>Works at this scale, particularly where plan complexity justifies it.</td>
+          <td>Good fit at the lower end (50–150). Less established above 200+ reps.</td>
+        </tr>
+        <tr>
+          <td>Implementation timeline</td>
+          <td>3–6 weeks for well-scoped implementations. Complex multi-plan builds can run to 8 weeks.</td>
+          <td>Typically 6–10 weeks due to the custom formula build-out required. Data pipeline setup adds time.</td>
+          <td>Often quoted as 4–6 weeks. Faster for simpler plan sets.</td>
+        </tr>
+        <tr>
+          <td>Pricing model</td>
+          <td>Per-rep per-month, typically sold as part of Salesforce bundles or standalone. Enterprise pricing.</td>
+          <td>Per-rep per-month. Generally in a similar range to Spiff at comparable scale.</td>
+          <td>Per-rep per-month. Often positioned as more competitive on price at smaller rep counts.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout-warn">
+    <p><strong>A note on pricing:</strong> All three platforms negotiate on price, especially above 50 seats. Published pricing means very little — the contract you sign can vary significantly depending on deal size, contract length, and what else you're buying from that vendor. Don't make a platform decision based on list price.</p>
+  </div>
+
+  <h2>The Decision Framework: When to Pick Which</h2>
+
+  <p>I'll be direct here. For most B2B SaaS companies, this decision isn't actually that complicated. The complexity is in acknowledging the real trade-offs rather than finding a reason to justify whatever you were already leaning toward.</p>
+
+  <div class="decision-grid">
+
+    <div class="decision-card">
+      <div class="pick pick-spiff">Choose Salesforce Spiff when</div>
+      <h3>You're on Salesforce CRM with standard SaaS plans</h3>
+      <p>If your revenue data lives in Salesforce, your commission plans follow the typical B2B SaaS model (quota-based, with accelerators, maybe a handful of role variations), and you have 30–400 reps — Spiff is almost certainly your answer. The native integration eliminates an entire category of implementation risk. You're not building a data pipeline; you're building plan logic directly on top of the data that already exists in your CRM.</p>
+      <p>The specific scenarios where Spiff is the clear winner:</p>
+      <ul>
+        <li>Salesforce is your CRM and your primary source of deal truth</li>
+        <li>Your plans are ARR or TCV-based with standard attainment thresholds</li>
+        <li>You have accelerators above 100% quota, product-level SPIFFs, or role-specific plan variants</li>
+        <li>You care about auditable, rep-verifiable statements (Spiff's statement drill-down is genuinely good)</li>
+        <li>You're at Series B or beyond and want a platform that scales without rearchitecting</li>
+      </ul>
+      <p>The <a href="/case-study/storyblok/">Storyblok implementation</a> is a concrete example: 100+ reps, 8 currencies, 10 distinct plans, and it went live in 4 weeks precisely because the Salesforce data model aligned with what Spiff expects. Multi-currency in particular is an area where Spiff's native Salesforce integration helps a lot — currency fields sync correctly without custom mapping.</p>
+    </div>
+
+    <div class="decision-card">
+      <div class="pick pick-captivate">Choose CaptivateIQ when</div>
+      <h3>Your plans are genuinely non-standard and your Finance team is Excel-native</h3>
+      <p>CaptivateIQ earns its place when your commission logic genuinely doesn't fit standard patterns. The key word is "genuinely" — I've seen companies convince themselves their plans are uniquely complex when they're actually standard plans with unusual naming. If you can describe your plan as quota attainment with rate tiers and a handful of modifiers, that's standard; Spiff handles it.</p>
+      <p>CaptivateIQ is the right call when:</p>
+      <ul>
+        <li>You have channel partner arrangements with non-standard revenue splits that don't map to Salesforce Opportunity fields</li>
+        <li>Your commission logic depends on data that lives outside Salesforce (finance system fields, product usage metrics, custom warehouse data)</li>
+        <li>Your Finance team built and currently owns the commission model in Excel and wants formula-level control over the configuration going forward</li>
+        <li>You're on HubSpot, Dynamics, or a custom CRM where Spiff's Salesforce-native advantage doesn't apply</li>
+        <li>You have a small number of reps with highly bespoke, individually negotiated plans that are essentially unique per person</li>
+      </ul>
+      <p>The honest caution: CaptivateIQ's power comes with maintenance overhead. The formula-based model requires an admin who stays on top of it. If the person who built the formulas leaves, the institutional knowledge gap can be significant. Budget for documentation and plan for that risk upfront.</p>
+    </div>
+
+    <div class="decision-card">
+      <div class="pick pick-everstage">Choose Everstage when</div>
+      <h3>Rep visibility and engagement are the primary driver, plans are moderate</h3>
+      <p>Everstage wins when the core problem is that reps don't know what they've earned, disputes are driven by opacity rather than misconfiguration, and the executive mandate is to improve how commission is communicated as much as how it's calculated. The mobile-first, real-time earnings view genuinely changes rep behaviour — reps who can see their projected earnings update as deals close are more engaged with the pipeline and less likely to question statements at month-end.</p>
+      <p>It's the right choice when:</p>
+      <ul>
+        <li>You're a smaller team (under 100 reps) where the rep experience is weighted heavily in the decision</li>
+        <li>Leadership wants gamification and leaderboard features as part of the sales culture</li>
+        <li>Your plans are standard enough that configuration depth isn't the constraint</li>
+        <li>You're not primarily on Salesforce, so Spiff's native integration advantage doesn't apply</li>
+      </ul>
+      <p>Everstage is a capable platform and it's improving fast. The caution is purely about scale and complexity ceilings — if you're planning to grow from 60 to 300 reps in two years and expect significant plan complexity, you may find yourself evaluating again sooner than you'd like.</p>
+    </div>
+
+  </div>
+
+  <h2>Why Most B2B SaaS Companies on Salesforce End Up with Spiff</h2>
+
+  <p>The short answer is that the data model alignment removes the biggest category of implementation risk. When you build commission plans in a system that isn't natively connected to your CRM, you introduce a synchronisation problem: when does data move, which fields map to what, what happens to in-flight deals during a sync window, how do you handle retroactive deal edits. These are solvable problems, but they take time and they can generate the exact kind of commission errors and disputes that motivated you to adopt an ICM platform in the first place.</p>
+
+  <p>With Spiff on a Salesforce org, you're building plans directly on the Opportunity object (or whatever custom objects represent your revenue). There's no sync to configure in the traditional sense. When a rep updates a deal, Spiff sees it. When Finance runs the commission period, it's running against the same data that the rep and the AE manager see in Salesforce. The audit trail is the CRM itself.</p>
+
+  <p>That said, "Spiff is usually the answer for Salesforce customers" is not the same as "Spiff implementations succeed automatically." They don't. The implementation quality determines whether you end up with a system reps trust or one they route around. Bad Spiff implementations produce the same disputes and overrides as bad spreadsheet-based processes — just with more expensive infrastructure underneath them.</p>
+
+  <div class="callout callout-info">
+    <p><strong>A pattern I see regularly:</strong> A company picks Spiff because it's the obvious choice given their Salesforce stack, then does a minimal internal implementation — one person builds the plans over a few weeks without proper testing, without signing off the plan logic against documented comp policy, without testing edge cases. Six months later, disputes are high, reps don't trust the statements, and they're either rebuilding or considering a switch. The platform wasn't wrong; the implementation was. This is exactly what the Storyblok engagement was — a rebuild of an existing Spiff instance, not a new platform evaluation.</p>
+  </div>
+
+  <h2>The Platform Is Only Half the Equation</h2>
+
+  <p>Every company I've seen struggle with ICM tools has the same diagnosis: they spent more energy evaluating platforms than they did evaluating their implementation approach. The right platform with a poor implementation is worse than a slightly suboptimal platform with a thorough one — because a poor implementation produces errors that erode trust, and once reps stop trusting the system, rebuilding that trust is harder than the original implementation.</p>
+
+  <p>What a solid implementation actually requires, regardless of platform:</p>
+
+  <ul>
+    <li><strong>A clear, signed-off comp policy document before you build anything.</strong> Every commission plan that goes into the system should be traceable to a specific clause in a document that Finance, Revenue, and HR have all approved. If that document doesn't exist, write it first. Building plans from memory or from a verbal brief produces discrepancies.</li>
+    <li><strong>Testing against 12 months of real historical deal data.</strong> Plans that look correct in a sandbox frequently surface errors when run against actual deal patterns — partial period reps, multi-year deals recognised across periods, deals with mid-cycle amendments, currency conversions on close date vs. payment date. You find these in testing, not in production.</li>
+    <li><strong>Edge case documentation.</strong> Clawbacks, draw recoveries, ramp schedules, deals that close in one period but are invoiced in another, split-credit deals where the rep team changes mid-deal. Every company has a handful of situations that don't fit the standard logic. If you don't build and test the edge cases explicitly, they become disputes.</li>
+    <li><strong>Rep acceptance testing before go-live.</strong> Getting a small group of reps to review their historical statements in the new system before it goes live for real periods is one of the highest-value steps most implementations skip. Reps know their deal history. If something looks wrong to them, it usually is.</li>
+  </ul>
+
+  <p>Whichever platform you choose — Spiff, CaptivateIQ, or Everstage — the implementation discipline is what determines whether you land on a system that runs quietly in the background or one that generates disputes every cycle. The platform gives you the infrastructure; the implementation gives you the outcome.</p>
+
+  <div class="verdict">
+    <div class="verdict-label">Bottom line</div>
+    <p>If you're a B2B SaaS company on Salesforce CRM with standard quota-based commission plans and 30–300 reps, Salesforce Spiff is almost certainly the right choice. If your plans are genuinely non-standard or you're not on Salesforce, CaptivateIQ deserves a serious look. If rep engagement and visibility are the primary mandate and you're a smaller team, Everstage is worth evaluating. The platform decision is less important than the implementation quality — but getting the platform right makes getting the implementation right considerably easier.</p>
+  </div>
+
+  <div class="related">
+    <h2>Related resources</h2>
+    <div class="related-grid">
+      <a href="/case-study/storyblok/" class="rel-card" style="text-decoration:none;color:inherit">
+        <span class="rel-tag">Case Study</span>
+        <h3>Storyblok: From 15 Disputes/Month to 2–3 After a Full Salesforce Spiff Rebuild</h3>
+      </a>
+      <a href="/resources/spiff-implementation-checklist/" class="rel-card" style="text-decoration:none;color:inherit">
+        <span class="rel-tag">Guide</span>
+        <h3>Salesforce Spiff Implementation Checklist: What to Do Before You Start</h3>
+      </a>
+      <a href="/resources/multi-currency-commission-plans-spiff/" class="rel-card" style="text-decoration:none;color:inherit">
+        <span class="rel-tag">Guide</span>
+        <h3>Multi-Currency Commission Plans in Salesforce Spiff: What to Get Right</h3>
+      </a>
+      <a href="/resources/why-reps-dont-trust-commission-statements/" class="rel-card" style="text-decoration:none;color:inherit">
+        <span class="rel-tag">Analysis</span>
+        <h3>Why Reps Don't Trust Their Commission Statements (And How to Fix It)</h3>
+      </a>
+    </div>
+  </div>
+
+  <div class="art-cta">
+    <h2>Evaluating Salesforce Spiff for your team?</h2>
+    <p>Book a free discovery call. I'll tell you honestly whether Spiff is the right fit and what a solid implementation looks like for your setup.</p>
+    <a href="/#contact">Book a Free Discovery Call</a>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <p>© <span id="yr"></span> SpiffRevOps · <a href="/">Home</a> · <a href="/resources/">Resources</a> · <a href="mailto:isma@spiffrevops.com">isma@spiffrevops.com</a> · <a href="/#contact">Contact</a> · Independent consultancy, not affiliated with Spiff Inc. or Salesforce.</p>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
