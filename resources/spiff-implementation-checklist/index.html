@@ -44,6 +44,47 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do you need before a Salesforce Spiff implementation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Five things must be ready before kickoff: a single agreed compensation policy document signed off by Finance, RevOps, and Sales leadership; clean CRM data with no duplicates or missing fields on key objects; a named internal project owner with authority to make comp decisions; confirmed CRM admin access for integration setup; and a complete list of every quota-carrying role and which plan applies to each. Missing any of these is the leading cause of implementation delays and rework."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most common reason Salesforce Spiff implementations fail before they start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common missing prerequisite is a single agreed compensation policy document. When comp plans are not fully defined in writing before kickoff — including edge cases like mid-quarter hires, split deals, and clawback triggers — teams end up designing the plan during the build itself. This doubles the implementation timeline and guarantees rework."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does preparation for a Salesforce Spiff implementation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a well-organised team, working through the pre-implementation checklist takes 1–2 weeks. The main bottleneck is aligning Finance, RevOps, and Sales leadership on a single compensation policy document. Teams where this is already documented can complete prep in a few days, which is one reason the Storyblok implementation was able to go from kickoff to live in 4 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should CRM data be prepared before a Salesforce Spiff implementation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Audit the fields Spiff will use to calculate commissions — close date, deal value, currency code, rep ownership, product type, and contract length. Look specifically for duplicate records, null values, and inconsistencies in how currencies or rep ownership are recorded. Bad CRM data is the single most common cause of rep commission disputes after go-live, and it is far cheaper to fix before the implementation starts than after."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">

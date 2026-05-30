@@ -35,6 +35,46 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does Salesforce Spiff handle multi-currency commission calculations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salesforce Spiff handles multi-currency commissions by pulling currency data from your CRM (typically the CurrencyIsoCode field on the Opportunity object) and applying exchange rate logic defined in your plan configuration. Each rep's attainment should be calculated in the same currency as their quota — a rep with a EUR quota should have their deals calculated in EUR, not converted to USD first. The exchange rate strategy (fixed monthly, live, or contract rate) must be defined before plan configuration begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most common multi-currency configuration error in Salesforce Spiff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common error is setting a rep's quota in one currency while their deals are being processed in another, typically because the CurrencyIsoCode field was not mapped from the CRM during integration setup. This causes attainment percentages to be calculated incorrectly. The fix is to explicitly map CurrencyIsoCode from the Salesforce Opportunity object so Spiff knows which currency each deal is denominated in, then ensure quota currency matches deal currency for each rep."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you set up exchange rates in Salesforce Spiff for international sales teams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Before configuring multi-currency plans in Salesforce Spiff, define your exchange rate strategy: fixed monthly rates (set at the start of each period), live rates (pulled dynamically), or contract rates (locked at deal close). Fixed monthly rates are the most common in practice because they are predictable and auditable — reps know at the start of the month what rate applies to their deals. Inconsistent rate logic across plans, or changing the strategy mid-year, is a common source of rep disputes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Salesforce Spiff support 8 or more currencies simultaneously?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Salesforce Spiff supports multi-currency plans at scale. The Storyblok implementation handled 100+ reps across 8 currencies with 10 distinct commission plans, all connected to Salesforce CRM, going live in 4 weeks. The key to clean multi-currency configuration at this scale is defining the full currency and territory structure — which currencies are in scope, which exchange rate logic applies, and how reps are grouped by region — before a single plan is built."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Home","item":"https://spiffrevops.com"},

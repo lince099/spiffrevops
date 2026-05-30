@@ -35,6 +35,46 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you build accelerators in Salesforce Spiff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Accelerators in Salesforce Spiff are configured using tiered rate structures within a commission plan. You define attainment thresholds (e.g. 80%, 100%, 120% of quota) and the commission rate that applies at each tier. The most important configuration decision is whether the accelerated rate applies to all earnings retroactively once a threshold is crossed, or only to earnings above that threshold. Getting this wrong is the most common source of post-launch disputes on accelerator plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most common mistake when configuring accelerators in Salesforce Spiff?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common mistake is misconfguring whether accelerator rates are applied retroactively or incrementally. A retroactive accelerator recalculates all earnings at the higher rate once a threshold is crossed; an incremental accelerator only applies the higher rate to earnings above that threshold. These produce very different payout amounts and reps notice the difference immediately. This must be explicitly agreed in the compensation policy document before the plan is built."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Salesforce Spiff handle multi-tier accelerator structures with complex attainment logic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Salesforce Spiff supports multi-tier accelerator structures with multiple attainment thresholds, different rates per tier, and overlapping conditions. It can also handle ramp-adjusted quotas for new hires, quarterly bonus overlays, and multipliers based on product mix. The complexity ceiling is high, but each additional layer increases configuration time, testing surface area, and the risk of edge cases that produce incorrect calculations if not explicitly defined upfront."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you test accelerator plans in Salesforce Spiff before going live?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most reliable testing approach is to run the configured accelerator plan against 6–12 months of historical closed-won deals and compare the output to what was actually paid out in that period. This surfaces calculation errors, edge cases, and threshold mismatches before any rep sees a live statement. Testing only against toy examples in a sandbox is not sufficient — plans that pass synthetic tests regularly produce surprises on real data."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Home","item":"https://spiffrevops.com"},

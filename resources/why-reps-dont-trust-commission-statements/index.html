@@ -35,6 +35,46 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why don't sales reps trust their commission statements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rep distrust in commission statements almost always has a systems root cause, not a communication one. The four most common structural causes are: commission plans built on messy CRM data producing incorrect deal values; accelerator or tier logic configured incorrectly so payouts do not match what reps calculate manually; lack of deal-level transparency so reps cannot see which specific deals drove their statement; and historical inconsistency where payouts changed without explanation. Fixing the underlying system is the only lasting solution — more communication about a broken output does not rebuild trust."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you fix rep distrust in commission statements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The fix requires three things: accurate underlying data (clean CRM records that Spiff pulls from), correctly configured plan logic (accelerators, tiers, and edge cases built as agreed in the comp policy), and full deal-level transparency (reps can see each deal, the commission rate applied, and how their attainment was calculated). When Storyblok rebuilt their Salesforce Spiff instance, commission disputes dropped from 15 per month to 2–3 — not because of better communications, but because the numbers became trustworthy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many commission disputes per month is normal for a sales team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A well-configured commission system should produce 0–2 disputes per month for a team of 20–50 reps. More than 5 disputes per month consistently signals a systemic problem — either with the underlying CRM data, the plan configuration, or both. At Storyblok, the team was handling 15 disputes per month before the Spiff rebuild. Post-rebuild, that dropped to 2–3. Each dispute involves a rep, a manager, a Finance person, and usually a RevOps review — at 45 minutes per dispute, 15 disputes represents over 11 hours of senior team time monthly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the business cost of reps not trusting their commission statements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cost has three components: direct time cost (Finance and RevOps reviewing and resolving disputes, typically 30–90 minutes each), indirect morale cost (reps who distrust their statements track commissions in their own spreadsheets and focus on the discrepancy rather than selling), and the Finance overhead cost of maintaining parallel reconciliation processes to cross-check Spiff outputs. Teams with chronic commission distrust also see slower adoption of commission tooling and higher attrition among top performers who care most about accurate payouts."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Home","item":"https://spiffrevops.com"},
